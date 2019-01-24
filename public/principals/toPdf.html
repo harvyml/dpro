@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Document</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+      <link rel="stylesheet" type="text/css" href="css/toPdf.css">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+<body>
+
+<div class="row">
+  <div class="container">      
+    <div class="col s12 mainpdf">
+      <ul class="s6 student-info">
+        
+      </ul>
+   <table class="striped bordered tabs-fixed-width">
+        <thead>
+          <th class="noExl" style="display: none;">Promedio Fin De Primer Periodo</th>
+          <th>Materia</th>
+          <th>Grupo</th>
+          <th>Definitiva</th>
+        </thead>
+        <tbody id="grades">
+          
+        </tbody>
+      </table>
+        <table class="table bordered striped">
+        <thead>
+          <th>Puesto</th>
+          <th>Promedio Total</th>
+        </thead>
+        <tbody id="extra-info">
+          
+        </tbody>
+      </table>
+    </div>
+      
+      <div id="editor"></div>
+      <div class="center">
+        <button id="cmd" class="btn hoverable waves-effect centered">Generate Notes PDF</button>
+      </div>
+
+     <div class="col s12 observationspdf">
+      <ul class="s6 student-info">
+
+      </ul>
+      <table class="striped bordered tabs-fixed-width">
+        <thead>
+          <th class="noExl" style="display: none;">Observacion Profesor</th>
+            <th>Profesor</th> 
+            <th>Observacion</th>
+            <th>Materia</th> 
+            <th>Fecha</th>
+        </thead>
+        <tbody class="observations">
+          <!-- -->
+        </tbody>
+      </table>
+    </div>
+
+   
+
+      <div id="editor"></div>
+      <div class="center">
+        <button id="dgp" class="btn hoverable waves-effect centered">Generate Observation PDF</button>
+      </div>
+
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="server/server.js"></script>
+<script type="text/javascript" src="server/toPdf.js"></script>
+</body>
+</html>

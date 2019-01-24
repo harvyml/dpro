@@ -1,0 +1,257 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"draw",
+				"drawBackground"
+			],
+			[
+				"funci",
+				"function"
+			],
+			[
+				"cuadrado",
+				"cuadrado_dos"
+			],
+			[
+				"cuadrad",
+				"cuadrado_uno"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"ge",
+				"generate"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"fig",
+				"figcaption\tTag"
+			],
+			[
+				"fi",
+				"figcaption\tTag"
+			],
+			[
+				"st",
+				"style\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 35.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Divino Niño/Google Drive/JUEGO DE NAVES/naves game.html",
+		"/C/Users/Divino Niño/Google Drive/star/dprojs/estudiantes/JUEGO DE NAVES/main.js",
+		"/C/Users/Divino Niño/Google Drive/star/dprojs/estudiantes/JUEGO DE NAVES/naves",
+		"/C/Users/Divino Niño/Google Drive/Naves",
+		"/C/Users/Divino Niño/Google Drive/Juego de Naves/Juego de Naves/naves.html",
+		"/C/Users/Divino Niño/Google Drive/SNAKE/game-dist.js",
+		"/C/Users/Divino Niño/Google Drive/SNAKE/game.js",
+		"/C/Users/Divino Niño/Google Drive/star/SNAKE/prepros-6.config",
+		"/C/Users/Divino Niño/Google Drive/SNAKE/prepros-6.config",
+		"/C/Users/Divino Niño/Google Drive/SNAKE/desktop.ini",
+		"/C/Users/Divino Niño/AppData/Roaming/Sublime Text 3/Packages/User/Vista Previa!!.sublime-build",
+		"/C/Users/Divino Niño/AppData/Roaming/Sublime Text 3/Packages/User/Vista.sublime-build",
+		"/C/Users/Divino Niño/Google Drive/SNAKE/index.html",
+		"/C/Users/Divino Niño/Google Drive/FIRST WEBSITE/first website.index.sublime-workspace",
+		"/C/Users/Divino Niño/Google Drive/PRIMERA PAGINA.html",
+		"/C/Users/Divino Niño/Google Drive/FIRST WEBSITE/PRIMERA PAGINA.html",
+		"/C/Users/Divino Niño/AppData/Roaming/Sublime Text 3/Packages/User/Vista Previa.Sublime.Text",
+		"/C/Users/Divino Niño/Google Drive/star/dprojs/desktop.ini"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"this.head.add();",
+			"();\n",
+			"()\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 25.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/Vista.sublime-build",
+	"project": "Juego de naves.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"d",
+				"game-dist.js"
+			],
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 127.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Maestros | DG</title>
+ <link rel="stylesheet" href="css/styles.css">
+ <!-- materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<header class="navbar-fixed">
+ <nav class="nav">
+  <ul class="desktop-nav">
+   <li><a class="user-name"></a></li>
+   <li><a href="#" id="btn-logout" class="nav-a">logout</a></li>
+   <li><a href="observations.html" class="nav-a">Observador</a></li>
+  </ul>
+  <a href="#" data-target="slide-out" class="white-text sidenav-trigger"><i class="material-icons">menu</i></a>
+    <select class="browser-default hidden hide-on-med-and-down black-text" id="choose-subject">
+      <option value="" disabled selected>Escoge Tu Materia</option>
+
+    </select>
+  </nav>
+</header>
+
+<div class="container con-1">
+ <h3 class="title-maestros">Maestros</h3>
+ <div class="row">
+  <div class="col s8">
+   <form class="form">
+    <input type="email" class="input-login" placeholder="Email" id="input-login-email">
+    <input type="text" class="input-login" placeholder="Codigo" id="input-login-code">
+    <input type="password" class="input-login" placeholder="Clave" id="input-login-pass">
+    <button class="btn-submit btn hoverable" id="btnLogin">Enviar</button>
+   </form>
+  </div>
+
+  <div class="col s4">
+   <h3 class="title">Login</h3>
+
+   <p class="form-info">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum laboriosam provident nam, consequatur iste pariatur explicabo cupiditate quidem enim tempore sit eveniet similique? Dolorem, eaque saepe delectus perspiciatis voluptatibus iure labore pariatur recusandae autem numquam amet dicta aspernatur, ullam omnis.
+   </p>
+  </div>
+
+ </div>
+</div>
+
+<!-- hidden student list -->
+<!-- appears only when the teacher goes into a room -->
+ <div class="row">
+  <div class="hidden">
+    <div class="col s12 l12 con-notas">
+      <!--<div id="choose-subject-mobile" class="center">
+        buttons from js code
+      </div>-->
+     <h3 class="center">Cambio de notas</h3>
+       <div class="hidden-before-room">
+         <ul class="tabs highlight tabs-fixed-width to-hide">
+          <li class="tab col s3"><a id="activate-primero" class="active" href="#primero">Primero</a></li>
+          <li class="tab col s3"><a id="activate-segundo" href="#segundo">Segundo</a></li>
+          <li class="tab col s3"><a id="activate-tercero" href="#tercero">Tercero</a></li>
+        </ul>
+        <div id="primero" class="col s12 list-mark" >
+          <table class="striped bordered tabs-fixed-width centered">
+            <thead>
+              <th class="noExl" style="display: none;">Primer Periodo</th>
+              <th>Nombre</th>
+              <th style="display: none;">Grupo</th>
+              <th>Compromiso en Clase 15%</th>
+              <th>Evaluaciones 30%</th>
+              <th>Trabajo Personal 30%</th>
+              <th>Evaluacion Final 20%</th>
+              <th>Auto y Coe 5%</th>
+              <th>Promedio</th>
+              <th>Observacion</th>
+              <th class="noExl"><button class="btn hoverable waves export-to-excel-1">Excel</button></th>
+            </thead>
+            <tbody id="grades-first-period">
+
+            </tbody>
+          </table>
+        </div>
+        <div id="segundo" class="col s12 list-mark" >
+          <table class="striped bordered tabs-fixed-width centered">
+            <thead>
+              <th>Nombre</th>
+              <th style="display: none;">Grupo</th>
+              <th>Compromiso en Clase 15%</th>
+              <th>Evaluaciones 30%</th>
+              <th>Trabajo Personal 30%</th>
+              <th>Evaluacion Final 20%</th>
+              <th>Auto y Coe 5%</th>
+              <th>Promedio</th>
+              <th>Observacion</th>
+              <th class="noExl"><button class="btn hoverable waves export-to-excel-2">Excel</button></th>
+            </thead>
+            <tbody id="grades-second-period">
+
+            </tbody>
+          </table>
+        </div>
+        <div id="tercero" class="col s12 list-mark" >
+          <table class="striped bordered tabs-fixed-width centered">
+            <thead>
+              <th>Nombre</th>
+              <th style="display: none;">Grupo</th>
+              <th>Compromiso en Clase 15%</th>
+              <th>Evaluaciones 30%</th>
+              <th>Trabajo Personal 30%</th>
+              <th>Evaluacion Final 20%</th>
+              <th>Auto y Coe 5%</th>
+              <th>Promedio</th>
+              <th>Observacion</th>
+              <th class="noExl"><button class="btn hoverable waves export-to-excel-3">Excel</button></th>
+            </thead>
+            <tbody id="grades-third-period">
+
+            </tbody>
+          </table>
+        </div>
+       </div>
+    </div>
+    <div class="col s3 description hide-on-med-and-down hidden-before-room" id="description-id">
+      <div class="white-text in-description" style="padding: 20px;">
+        <img src="https://af-production.s3.amazonaws.com/photos/images/76458/original/books.jpg" alt="" width="100%">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe libero similique adipisci placeat, eum aliquam, rem, deserunt natus vel est quod. Odio sapiente odit, ab fugiat quia iste incidunt fugit, asperiores rerum aliquid nobis qui quasi deserunt saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cum aliquid vel in esse a optio ut ipsa? Est, quidem.
+      </div>
+      <div class="button-hide center" style="padding: 20px;">
+        <button class="btn hoverable waves con-rooms-show" id="con-rooms-show">Salones</button>
+      </div>
+    </div>
+  </div>
+ </div>
+
+
+<!-- End -->
+
+
+<!-- Rooms -->
+<div class="row hidden con-rooms">
+
+  <div class="room" id="room-t"><a href="#">T</a>°</div>
+  <div class="room" id="room-1-1"><a href="#">1_1</a>°</div>
+  <div class="room" id="room-1-2"><a href="#">1_2</a>°</div>
+  <div class="room" id="room-2-1"><a href="#">2_1</a>°</div>
+  <div class="room" id="room-2-2"><a href="#">2_2</a>°</div>
+  <div class="room" id="room-3-1"><a href="#">3_1</a>°</div>
+  <div class="room" id="room-3-2"><a href="#">3_2</a>°</div>
+  <div class="room" id="room-4-1"><a href="#">4_1</a>°</div>
+  <div class="room" id="room-4-2"><a href="#">4_2</a>°</div>
+  <div class="room" id="room-5-1"><a href="#">5_1</a>°</div>
+  <div class="room" id="room-5-2"><a href="#">5_2</a>°</div>
+
+  <div class="room" id="room-6-1"><a href="#">6_1</a>°</div>
+  <div class="room" id="room-6-2"><a href="#">6_2</a>°</div>
+  <div class="room" id="room-7-1"><a href="#">7_1</a>°</div>
+  <div class="room" id="room-7-2"><a href="#">7_2</a>°</div>
+  <div class="room" id="room-8-1"><a href="#">8_1</a>°</div>
+  <div class="room" id="room-9-1"><a href="#">8_2</a>°</div>
+  <div class="room" id="room-9-2"><a href="#">9_1</a>°</div>
+  <div class="room" id="room-10-1"><a href="#">9-2</a>°</div>
+  <div class="room" id="room-10-2"><a href="#">10_1</a>°</div>
+  <div class="room" id="room-11-1"><a href="#">10_2</a>°</div>
+  <div class="room" id="room-11-2"><a href="#">11_1</a>°</div>
+  <div class="room" id="room-11-2"><a href="#">11_2</a>°</div>
+
+</div>
+<!-- End -->
+
+<div class="row">
+  <ul id="slide-out" class="sidenav">
+    <div class="user-view">
+      <div class="background">
+        <img src="https://img.apmcdn.org/f8c7f380b031e7e85a5428e7633e047e45596b75/uncropped/e0356d-20170825-keeping-teachers.jpg" width="100%">
+      </div>
+      <a href="#user"><img class="circle user-img"></a>
+      <a href="#name"><span class="white-text name"></span></a>
+      <a href="#email"><span class="white-text email"></span></a>
+    </div></li>
+    <div id="choose-subject-mobile">
+
+    </div>
+    <li><div class="divider"></div></li>
+
+
+  </ul>
+</div>
+
+    <!-- firebase server -->
+     <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+      <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+ <!-- local files -->
+ <script src="server/config.js"></script>
+ <script src="js/index.js"></script>
+ <script src="server/all.js"></script>
+ <script src="js/jspdf.min.js"></script>
+</body>
+</html>

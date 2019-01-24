@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comunidad</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link rel="stylesheet" href="css/grades.css">
+<link rel="stylesheet" href="css/staff.css">
+<link rel="stylesheet" href="css/estilos.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- materialize -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+<body>
+
+<header class="navbar-fixed">
+<nav class="nav">
+<ul>
+ <li><a class="user-name"></a></li>
+ <li><a href="#" id="btn-logout" class="nav-a">logout</a></li>
+ <li><a href="staff.html" id="btn-logout" class="nav-a">Comunidad</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="row">
+	<div class="statistics col s12">
+		<div class="card">
+			<div class="card-content">
+				<h4 class="center">Funcionalidades</h4>
+			</div>
+			<div class="card-tabs">
+				<ul class="tabs tabs-fixed-width">
+					<li class="tab"><a href="#statistics">Estadisticas</a></li>
+					<li class="tab"><a href="#config" class="active">Configuraciòn</a></li>
+          <li class="tab"><a href="#register">Registro De Usuarios</a></li>
+				</ul>
+			</div>
+			<div class="card-content grey lighten-4">
+				<div id="statistics">
+            <h4>Estadisticas</h4>
+            <ul class="collection">
+              <li class="collection-item" id="statistics">
+                <div class="students">
+
+                </div>
+                <div id="chart_div" class="center col s12"></div>
+              </li>
+            </ul>
+				</div>
+				<div id="config">
+          <ul class="collection">
+           <li class="collection-item">
+             <p>Vista de notas para estudiantes</p>
+             <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" id="switch-for-students" class="switch-edit-config">
+                <span class="lever"></span>
+                On
+              </label>
+            </div>
+           </li>
+           <li class="collection-item">
+             <p>Cambio de notas para profesores</p>
+             <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" id="switch-for-teachers" class="switch-edit-config">
+                <span class="lever"></span>
+                On
+              </label>
+            </div>
+           </li>
+         </ul>
+         <div class="row">
+           <div class="card small">
+             <div class="card-image waves-effect waves-block waves-light">
+               <img class="activator" src="https://materializecss.com/images/office.jpg">
+             </div>
+             <div class="card-content">
+               <span class="card-title activator grey-text text-darken-4">Registrar Curso<i class="material-icons right">more_vert</i></span>
+               <p><a href="#">Crea un nuevo curso y configuralo</a></p>
+             </div>
+             <div class="card-reveal">
+               <span class="card-title grey-text text-darken-4">Registrar Cursos<i class="material-icons right">close</i></span>
+               <form action="" class="form-courses">
+                   <div class="input-field col s6">
+                     <input type="text" id="group"/>
+                     <label for="group">Grupo</label>
+                   </div>
+                   <div class="input-field col s6 info-director-hidden">
+                     <input type="text" id="director"/>
+                     <label for="director">Director de Grupo</label>
+                   </div>
+                   <div class="input-field col s6 info-subjects-hidden">
+                     <input type="text" id="subjects"/>
+                     <label for="subjects">Materias</label>
+                   </div>
+                   <div class="input-field col s12 info-students-hidden">
+                     <input type="text" id="students" class="autocomplete"/>
+                     <label for="students">Estudiantes</label>
+                   </div>
+                   <div class="students-data col s12">
+                     <div class="white darken-1">
+                       <span class="card-title">Estudiantes Registrados</span>
+                       <div class="collection students-list">
+                        <!-- -->
+                      </div>
+                     </div>
+                   </div>
+                   <p class="info-subjects-hidden">
+                    <label>
+                      <input type="checkbox" id="check-last-subject">
+                      <span>Ultima Materia</span>
+                    </label>
+                  </p>
+                   <div class="subjects-data col s12">
+                     <div class="white darken-1">
+                       <span class="card-title">Materias Registradas</span>
+                       <div class="collection subjects-list">
+                        <!-- -->
+                      </div>
+                     </div>
+                   </div>
+
+                 <div class="center col s12">
+                   <button type="submit" class="btn hoverable waves center" id="add-course">Agregar Curso</button>
+                   <button type="submit" class="btn hoverable waves center" id="add-director">Agregar Director</button>
+                   <button type="submit" class="btn hoverable waves center" id="add-subjects">Agregar Materias</button>
+                   <button type="submit" class="btn hoverable waves center" id="add-students">Agregar Estudiantes</button>
+                 </div>
+               </form>
+             </div>
+           </div>
+         </div>
+				</div>
+
+        <!-- ================================================ -->
+        <div id="register">
+          <div class="card-tabs">
+    				<ul class="tabs tabs-fixed-width">
+    					<li class="tab"><a class="active" href="#students">Estudiantes</a></li>
+    					<li class="tab"><a href="#teachers">Profesores</a></li>
+    					<li class="tab"><a href="#admin">Administradores</a></li>
+    				</ul>
+    			</div>
+          <!-- -->
+          <div id="students">
+            <div class="container">
+              <div class="form-container">
+                <h4 class="center">Registro de Estudiantes</h4>
+                <div class="form">
+                    <input type="text" class="input" placeholder="Nombre Completo" id="student-name">
+                    <input type="text" class="input" placeholder="Usuario" id="student-user">
+                    <input type="text" class="input" placeholder="Email" id="student-email">
+                    <input type="number" class="input" placeholder="id" id="student-id">
+                    <input type="text" class="input" placeholder="Grupo" id="student-group">
+                    <input type="text" class="input" placeholder="Telefono" id="student-phone">
+                    <input type="text" class="input" placeholder="Codigo" id="student-code">
+                    <input type="password" class="input" placeholder="Clave" id="student-password">
+                    <button class="btn hoverable waves" id="register-student">Registrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="teachers">
+            <div class="container">
+              <div class="form-container">
+                <h4 class="center">Registro de Profesores</h4>
+                <div class="form">
+                    <input type="text" class="input" placeholder="Nombre Completo" id="teacher-name">
+                    <input type="text" class="input" placeholder="Usuario" id="teacher-user">
+                    <input type="text" class="input" placeholder="Email" id="teacher-email">
+                    <input type="number" class="input" placeholder="id" id="teacher-id">
+                    <input type="text" class="input" placeholder="Telefono" id="teacher-phone">
+                    <input type="text" class="input" placeholder="Codigo" id="teacher-code">
+                    <input type="password" class="input" placeholder="Clave" id="teacher-password">
+                    <div class="chips chips-autocomplete" id="teacher-subject" placeholder="Materias"></div>
+                    <!--
+                    <div class="input-field col s12" id="teacher-subject">
+                      <select multiple>
+                        <option disabled selected>Materia</option>
+
+                      </select>
+                      <label>Seleccionar Materias Para el profesor usuario</label>
+
+                    </div>
+                    -->
+                    <button class="btn hoverable waves" id="register-teacher">Registrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="admin">
+            <div class="container">
+              <div class="form-container">
+                <h4 class="center">Registro de Administradores</h4>
+                <div class="form">
+                    <input type="text" class="input" placeholder="Nombre Completo" id="admin-name">
+                    <input type="text" class="input" placeholder="Usuario" id="admin-user">
+                    <input type="text" class="input" placeholder="Email" id="admin-email">
+                    <input type="number" class="input" placeholder="id" id="admin-id">
+                    <input type="text" class="input" placeholder="Telefono" id="admin-phone">
+                    <input type="text" class="input" placeholder="Codigo" id="admin-code">
+                    <input type="password" class="input" placeholder="Clave" id="admin-password">
+                    <button class="btn hoverable waves" id="register-admin">Registrar</button>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- dev URL -->
+<script src="js/jquery.table2excel.js"></script>
+<!-- local files -->
+<script src="server/server.js"></script>
+<script src="server/index.js"></script>
+<script src="server/statistics.js"></script>
+<script src="server/addStaff.js"></script>
+<script src="server/viewProfile.js"></script>
+<script src="js/conMaterialize.js"></script>
+<script src="server/register.js"></script>
+</body>
+</html>

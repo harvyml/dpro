@@ -1,0 +1,41 @@
+[debug] [2018-08-05T15:34:00.149Z] ----------------------------------------------------------------------
+[debug] [2018-08-05T15:34:00.155Z] Command:       D:\programas\node\node.exe C:\Users\harvy\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-08-05T15:34:00.156Z] CLI Version:   3.17.4
+[debug] [2018-08-05T15:34:00.156Z] Platform:      win32
+[debug] [2018-08-05T15:34:00.156Z] Node Version:  v8.9.4
+[debug] [2018-08-05T15:34:00.158Z] Time:          Sun Aug 05 2018 10:34:00 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-08-05T15:34:00.158Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-05T15:34:00.350Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-05T15:34:00.352Z] > authorizing via signed-in user
+[debug] [2018-08-05T15:34:00.362Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-08-05T15:34:00.363Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/UxWlchPn7g_5qCdlYsp0F5aBmf4MTN1ik4TUsP3avdY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Aug 05 2018 10:34:00 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-08-05T15:34:01.141Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-05T15:34:01.251Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/dpro-343c0  
+  
+ Sun Aug 05 2018 10:34:01 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-08-05T15:34:02.315Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-05T15:34:02.318Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/dpro-343c0/tokens  
+  
+ Sun Aug 05 2018 10:34:02 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-08-05T15:34:03.294Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\harvy\Google Drive\star\dprojs'...
+[info] 
+[debug] [2018-08-05T15:34:03.308Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/dpro-343c0  
+  
+ Sun Aug 05 2018 10:34:03 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-08-05T15:34:04.891Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-05T15:34:04.892Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/622288756150/clients/_:getWebAppConfig  
+  
+ Sun Aug 05 2018 10:34:04 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2018-08-05T15:34:05.755Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

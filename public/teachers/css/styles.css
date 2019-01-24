@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya:500|Lora|Montserrat|Playfair+Display');
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	font-family: 'Lora', serif;
+}
+
+.hidden, .to-hide{
+	display: none;
+}
+
+.saved{
+	background-color: green;
+}
+
+#toast-container{
+	width: 100%;
+}
+/* header */
+
+header{
+	width: 100%;
+}
+
+header .nav li .nav-a{
+	color: white;
+}
+
+
+@media(max-width: 900px){
+	header nav li:nth-child(1){
+	margin-left: 0;
+	}
+}
+
+.nav, .description{
+	background: #3d98d1;
+}
+
+/* container 1 */
+
+.title-maestros{
+	text-align: center;
+	margin: 100px 0px;
+}
+
+/* con rooms */
+
+.con-rooms{
+	width: 100%;
+	background: #fafafa;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.con-rooms .room{
+	min-width: 100px;
+	background: #f0f0f0;
+	border: 2px solid white;
+	margin: 30px;
+	text-align: center;
+	font-size: 30px;
+	transition: all 0.5s;
+}
+
+.con-rooms .room:hover{
+	transform: scale(1.1, 1.1);
+	background: #fafafa;
+	border: 2px solid #f0f0f0;
+}
+
+.con-rooms .room a{
+	color: black;
+}
+
+.con-rooms .room a:focus{
+	color: #03759b;
+}
+
+/* Registrar Notas*/
+.list-mark{
+	margin: auto;
+}
+
+.list-mark table{
+	width: 100%;
+	margin: auto;
+}
+
+.table tbody tr{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tr-grades-table td{
+	border: 1px solid #ccc;
+}
+
+.tr-grades-table td span{
+	display: none;
+}
+
+.hidden-before-room{
+	display: none;
+}
+
+@media screen and (max-width: 600px){
+	.tr-grades-table td{
+		width: 20px;
+		padding: 0;
+	}
+	.desktop-nav{
+		display: none;
+	}
+}
+
+
+/*Table students styles*/
+.descriptionAnimated{
+	position: fixed;
+	margin-left: 75%;
+	width: 25%;
+	height: 100%;
+	box-sizing: border-box;
+	background: #3d98d1;
+	padding: 10px;
+}
+
+.descriptionAnimated img{
+	width: 100%;
+}
+
+.descriptionAnimated button{
+	margin: 20px;
+}
+
+.first-period-table .tg-td input{
+	min-width: 45%;
+	display: flex;
+}
+
+.td-two-items{
+	display: flex;
+}
+
+
+#choose-subject-mobile{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1000px){
+	#choose-subject-mobile{
+		display: none;
+	}
+}

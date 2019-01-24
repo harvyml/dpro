@@ -1,0 +1,292 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background: #f9f9f9;
+}
+
+/*scrollbar*/
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #584B4B;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #44899A;
+}
+
+/*Sidenav*/
+.sidenav .user-view-edited .background-edited{
+	position: relative;
+}
+.sidenav .user-view-edited{
+	padding: 0;
+}
+/**/
+
+/**/
+
+.info, .con-login{
+	margin-bottom: 100px;
+
+}
+
+.span-hide{
+	display: hidden;
+}
+
+.hidden{
+	display: none;
+}
+
+/*----- header ---------*/
+
+.header{
+	width: 100%;
+	vertical-align: top;
+}
+
+/*------- este es el nav principal -------*/
+.nav-header{
+	z-index: 1000;
+	background: #68d0ff;
+	position: fixed;
+	margin: 0;
+}
+
+#slide-out{
+	margin-top: 64px;
+}
+/*---------------------------*/
+#aside{
+	color: white;
+}
+/*--- usuario y menu desplegable ----*/
+
+.p-user{
+	float: right;
+	margin-right: 3%;
+}
+
+#menu-icon{
+	float: right;
+	background: #68d0ff;/* azul claro */
+	color: white;
+	border-radius: 50px;
+	margin-top: 13px;
+	cursor: pointer;
+	margin-right: 14%;
+}
+
+#menu-icon:hover{
+	background: white;
+}
+
+#menu-icon i:hover{
+	color: #68d0ff;
+}
+
+#menu-icon i{
+	line-height: 45px;
+}
+
+.li-nav:nth-child(1){
+	margin-left: 14%;
+}
+
+
+
+/*--- imagen del header ----*/
+
+.header-img{
+	height: 100%;
+}
+
+.user-img{
+	width: 50px;
+}
+
+.poster-info p{
+	margin: 20px;
+}
+/*------------------------*/
+
+/*---------- fin del header --------*/
+
+/* --------- seccion de login ---------*/
+
+.con-login{
+	padding-top: 100px;
+}
+
+.input-login:focus{
+	border-bottom: 1px solid #68d0ff;
+}
+
+
+input[type=submit]{
+	background: #68d0ff;
+}
+
+input[type=submit]:hover{
+	background: #68dfff;
+}
+
+#btn-2{
+	margin-top: 20px;
+}
+
+#button-toggle-sidebar{
+    float: right;
+	color: white;
+	cursor: pointer;
+}
+
+
+/* parallax */
+
+
+.parallax-container {
+   height: 1600px;
+}
+
+/* seccion de info */
+
+
+/*---- con login -----*/
+
+.con-login{
+	background: white;
+	padding-top: 20px;
+}
+
+.col-form form{
+	padding: 0px 50px;
+	box-sizing: border-box;
+}
+
+#btn-1{
+	width: 100%;
+}
+
+.con-login .title-h4{
+	text-align: center;
+	color: #68d0ff;
+}
+
+.p-login-info{
+	padding-right: 50px;
+}
+
+.login-info-h4{
+	text-align: center;
+	color: #68d0ff;
+	padding-bottom: 30px;
+}
+
+/*--------------------------------- account -----------------------------*/
+
+.con-notas{
+	padding-top: 20px;
+	margin: 0 20%;
+}
+
+.titulo-nom{
+	text-align: center;
+}
+
+#main-info{
+	margin-top: 30px;
+}
+
+.content-in-observation{
+	margin: auto 30px;
+}
+
+.observations{
+	margin: 50px auto;
+}
+/*-------------------------------- Notas ----------------------------*/
+
+.grades{
+	width: 100%;
+	display: block;
+}
+
+.grades .number-grades{
+	color: #ffeb3b;
+}
+
+@media only screen and (max-width: 600px){
+	#all_grades{
+		font-size: 10px;
+		width: 100%;
+	}
+	#all_grades tbody{
+		width: 100%;
+	}
+}
+/*--------- con-iniciar -----------*/
+
+#con-iniciar{
+	padding-top: 100px;
+}
+
+/*--------------------- pagina chat ------------------------------*/
+
+.con-chat{
+	padding-top: 100px;
+}
+
+.titulo-messages{
+	text-align: center;
+}
+
+.user-on-message{
+	font-weight: bold;
+}
+
+#chat{
+	padding-top: 100px;
+	color: white;
+}
+
+#chat h1{
+	color: black;
+}
+
+.con-conver{
+	padding-top: 200px;
+	background: #fafafa;
+}
+
+/*------------------ pagina de registro ----------------------*/
+
+
+.con-register{
+	padding-top: 100px;
+}
+
+.register-h4{
+    text-align: center;
+    padding: 15px 0px;
+    color: #68d0ff;
+
+}
+
+/*-----------info registrate-------*/
+
+.col-info-registrate{
+    background: #fff;
+}
+
+.col-info-registrate h5{
+    text-align: center;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="css/estilos.css">
+    <!-- icons materialize -->
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- google icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>DG Diseños Web</title>
+</head>
+<body>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <header id="header-register">
+       <nav class="nav nav-header" id="nav">
+
+
+      <!-- muestra de nombre de usuario -->
+
+
+      <ul>
+        <li class="li-nav li-nav1 email">
+        <a href="index.html" class="a-1 a-li-nav">Inicio</a>
+        </li>
+        <li class="li-nav"><a href='about.html' class='a-2 a-li-nav'>Acerca de</a><!-- cambia por servicio cuando hay una sesion activa --></li>
+        <li class="li-nav"><a class="btn-logout" class='a-3 a-li-nav'>Logout</a></li>
+
+      </ul>
+      <!-- fin de seccion de navegacion -->
+        <a href="#" data-activates="slide-out" class="button-collapse" id="button-toggle-sidebar"><i class="material-icons">menu</i></a>
+      <p class="p-user"></p>
+        </nav>
+        <!-- incluyo la version del nav para celulares -->
+    </header>
+
+
+	<div class="parallax-container to-hide">
+      <div class="parallax"><img src="http://www.lifeoftrends.com/wp-content/uploads/2017/08/InspiredStudents.jpg"></div>
+  </div>
+
+<div class="row">
+   <!-- here is an animation for putting the "s2" property of materialize -->
+  <ul id="slide-out" class="side-nav white-text" style="margin-top: 65px;">
+    <div class="user">
+      <div class="background">
+        <img src="http://www.lifeoftrends.com/wp-content/uploads/2017/08/InspiredStudents.jpg" alt="Estudiantes" width="100%">
+      </div>
+      <li><a href="#!name"><span class="name blue-text name-modal"><!-- User --></span></a></li>
+      <li><a href="#!code"><span class="email blue-text code-modal"><!-- Email del usuario --></span></a></li>
+    </div>
+
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Categorias</a></li>
+    <li><a class="waves-effect" href="#!"><i class="material-icons">event_note</i>Noticias</a></li>
+    <li><a href="#!" class="btn-logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
+  </ul>
+  </div>
+
+  <div class="row to-hide">
+    <div class="school-info">
+      <div class="title center">
+        <h3>La Presentación el Paraiso</h3>
+      </div>
+      <div class="con-login">
+        <div class="col s7">
+          <img src="http://www.lifeoftrends.com/wp-content/uploads/2017/08/InspiredStudents.jpg" alt="La presentación el paraiso" width="100%" class="img-material-boxed main-img">
+        </div>
+        <div class="col s5">
+          <div class="login center">
+            <h4>Inicia sesión</h4>
+            <div class="form">
+              <input type="number" placeholder="ID" id="id-log">
+              <input type="text" placeholder="Codigo del estudiante" id="code-log">
+              <!--<input type="text" placeholder="Documento de identidad del estudiante" id="id-student">-->
+              <button class="btn hoverable waves" id="submit-login">Inicia Sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+    <!-- hidden  1-->
+
+    <div class="con-notas row">
+    <div class="container">
+      <div class="col s12">
+      <h5 class="title h5 title-h5-periodo center">Notas</h5>
+
+        <div class="notas" id="all_grades">
+             <div class="col s12">
+                <ul class="tabs tabs-fixed-width">
+                  <li class="tab col s3"><a class="active" href="#test1">Primer Periodo</a></li>
+                  <li class="tab col s3"><a href="#test2">Segundo Periodo</a></li>
+                  <li class="tab col s3"><a href="#test3">Tercer Periodo</a></li>
+                </ul>
+              </div>
+              <div id="test1" class="col s12 ">
+                <table class="bordered highlight toPdf-1">
+                  <thead>
+                    <tr>
+                      <th>Materia</th>
+                      <th>Compromiso en clase 20%</th>
+                      <th>Evaluación Final 30%</th>
+                      <th>Evaluaciones 20%</th>
+                      <th>Trabajo Personal 30%</th>
+                      <th>Auto y Coe 5%</th>
+                      <th>Promedio Total</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-notas-1">
+
+                  </tbody>
+                </table>
+                <div class="export center">
+                  <button class="btn hoverable waves export-to-excel-1">Excel</button>
+                  <button class="btn hoverable waves export-to-pdf-1">PDF</button>
+                </div>
+              </div>
+              <div id="test2" class="col s12 ">
+                <table class="bordered highlight toPdf-2">
+                  <thead>
+                    <tr>
+                      <th>Materia</th>
+                      <th>Compromiso en clase 20%</th>
+                      <th>Evaluación Final 20%</th>
+                      <th>Evaluaciones 30%</th>
+                      <th>Trabajo Personal 30%</th>
+                      <th>Auto y Coe 5%</th>
+                      <th>Promedio Total</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-notas-2">
+
+                  </tbody>
+                </table>
+                <div class="export center">
+                  <button class="btn hoverable waves export-to-excel-2">Excel</button>
+                  <button class="btn hoverable waves export-to-pdf-2">PDF</button>
+                </div>
+              </div>
+              <div id="test3" class="col s12 ">
+                <table class="bordered highlight toPdf-3">
+                  <thead>
+                    <tr>
+                      <th>Materia</th>
+                      <th>Compromiso en clase 20%</th>
+                      <th>Evaluación Final 20%</th>
+                      <th>Evaluaciones 30%</th>
+                      <th>Trabajo Personal 30%</th>
+                      <th>Auto y Coe 5%</th>
+                      <th>Promedio Total</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-notas-3">
+
+                  </tbody>
+                </table>
+                <div class="export center">
+                  <button class="btn hoverable waves export-to-excel-3">Excel</button>
+                  <button class="btn hoverable waves export-to-pdf-3">PDF</button>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    </div>
+<!-- ....................................................................................................-->
+
+
+
+
+<!-- .......................................................................................................... -->
+
+
+    <script src="js/index.js"></script>
+
+    <!-- ajax -->
+
+    <!-- firebase server -->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="server/server.js"></script>
+    <script src="server/blogData.js"></script>
+
+</body>
+</html>

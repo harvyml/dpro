@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.form-containers{
+	margin: auto;
+	display: flex;
+}
+
+.form-container{
+	width: 25%;
+	margin: auto auto;
+}
+
+.form h3{
+	text-align: center;
+}
+
+.form .btn{
+	margin: auto auto;
+}
+

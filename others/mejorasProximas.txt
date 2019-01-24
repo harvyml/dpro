@@ -1,0 +1,48 @@
+--------------Administradores-----------------
+
+- Registrar, Borrar y  editar usuarios {Hecho}
+	- Subida de Fotos de estudiantes
+- Buscar Usuarios
+- Definicion De Usuarios Activos (Esta functionalidad es necesaria en cuanto a las mensualidades)
+- Roles de usuario {Hecho}
+- Internacionalizacion (crear cambios de idioma en el perfil del usuario, y de esta manera realizar la traduccion 	deseada a la hora de iniciar sesión)
+- Servicio gratuito de traduccion de google
+- Realizar cambios en la validacion del nivel para la correcta muestra de notas para cada estudiante {Hecho para 	bachillerato, falta primaria}
+- Cambios de año y saber cuando un estudiante ha perdido el año (trabajar con nodejs y cloud Functions y cronjobs 	para que se ejecute la funcion cuando acabe el ultimo periodo )
+- Que le sea posible al administrador determinar el tipo de calificacion, limite inferior y limite superior
+- Mostrar listado de informacion general de salones {A manera de tabla}
+- Permitir la creacion de salones
+- para version completa permitir la creacion de materias para cada salon
+- Tabla de promociones de estudiantes (Aprobado, Reprobado)
+- Estado de matricula para desactivacion automatica de la plataforma para ese estudiante
+- Nombre del Colegio
+- Carga de logotipo de la institucion 
+- pagina web del colegio
+- Correo electronico del colegio
+- Direccion de la institucion 
+- GENERACION DE BOLETINES
+	- Configuracion de formato: Se pueden dar varias opciones
+		- Boletin por salones 
+		- Boletin por periodo
+		- Boletin para cierre de año lectivo
+		- Opciones de impresion: logo del colegio por ejemplo
+			- Nombre de grupos de areas
+			- Nombres de profesores
+			- Nota oficial de desempeño: Superior, alto, basico, bajo
+			- Datos estadisticos: Puesto, Numero de asignaturas, promedio del grupo, desempeño general del grupo
+- Generacion de diplomas: Opcional
+- Generacion de Certificados
+- Generacion de planillas con calificaciones en excel
+
+
+
+
+
+-------------- Profesores -------------------
+
+- Casilla especifica de recuperacion con 3.5 como maximo
+- Creacion de indicadores por notas, por ejemplo if(nota >= 4.6){indicador="El estudiante lleva un puntaje superior"}
+- Generacion de reporte de estudiante por materia
+
+------------------Toda la Comunidad-------------------------
+- Blog {hecho en React}

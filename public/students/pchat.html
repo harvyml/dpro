@@ -1,0 +1,92 @@
+<?php include 'inc/header.php';?>
+<?php $pagina = "pchat"; ?>
+<?php include 'php/conchat.php';?>
+<?php include 'php/seeMessages.php'; ?>
+
+<?php 
+
+
+include 'php/conexion.php';
+
+
+
+$consulta = "SELECT * FROM conversacion WHERE codEstu = $usercode";
+
+$resultado = mysqli_query($conexion, $consulta);
+
+while($user = mysqli_fetch_assoc($resultado)){
+	$username = $user["usuario"];
+	$mensaje = $user["mensaje"];
+}
+
+?>
+
+
+<div class="container con-conver">
+	<div class="row">
+		<div class="col s12 ">
+			
+			<h3 class="title-h3 h3">Chat con <?php echo $username;?></h3>
+			
+		<div class="card-panel">
+
+			<!-- informacion del usuario -->
+	
+	<a class="btn dropdown-button" href="#!" data-activates="dropdown2"><?php echo $username; ?><i class="mdi-navigation-arrow-drop-down right"></i></a>			
+	
+	<ul id="dropdown2" class="dropdown-content">
+	    <li><a href="#!"><?php echo $nombre; ?></a></li>
+	    <li><a href="#!"><?php echo $nivel; ?></a></li>
+  	</ul>
+  
+			<!--   Fin   -->
+
+			<!-- mensaje -->
+	<div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal" id="conversacion">
+          <span class="white-text" id="blank">
+
+		<!-- mensaje --><?php echo $mensaje;?>
+
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- llamada y registro de mensajes -->
+
+<script>
+
+
+$(function(){
+	$.ajaxSetup({"cache": false});
+	setInterval("readMessages()", 500);
+})
+
+	var readMessages = function(){
+		$.ajax({
+			type: "POST",
+			url: "php/seeMessages.php"
+		}).done(function(info){
+			$('#conversacion #blank').html(info);
+			$('#conversacion #blank:last-child').css({"background-color": "green", "padding-bottom": "20px"})
+		})
+	}
+
+
+
+</script>
+
+			<!-- fin del mensaje -->
+	</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<?php include 'inc/footer.php'; ?>

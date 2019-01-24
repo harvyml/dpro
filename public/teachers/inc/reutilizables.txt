@@ -1,0 +1,177 @@
+// first version of grades table in js
+                //Notas Primer Periodo
+              /*var listPP = $("#primero ul")
+              var liPP = document.createElement('li');
+              liPP.innerText = name +"\n" +code + "\n" + group ;
+              var divPP = document.createElement('table')
+              var nupp = document.createElement('input')
+              var ndpp = document.createElement('input')
+              var ntpp = document.createElement('input')
+              var ncpp = document.createElement('input')
+              var ncipp = document.createElement('input')
+              var nsepp = document.createElement('input')
+              var nsipp = document.createElement('input')
+              var nopp = document.createElement('input')
+              var auto_1 = document.createElement('input')
+              var coe_1 = document.createElement('input')
+              var btn_submit_grades_1 = document.createElement('button')
+              btn_submit_grades_1.setAttribute("class", "btn hoverable submit-first-period btn-submit-grades")
+              btn_submit_grades_1.setAttribute("href", k)
+              btn_submit_grades_1.innerText = "Enviar";
+
+
+              nupp.setAttribute('value', studentsList[k].grades[materia].nupp)
+              nupp.setAttribute('class', `${k}-set-nupp`  )
+
+              ndpp.setAttribute('value', studentsList[k].grades[materia].ndpp)
+              ndpp.setAttribute('class', `${k}-set-ndpp`)
+
+              ntpp.setAttribute('value', studentsList[k].grades[materia].ntpp)
+              ntpp.setAttribute('class', `${k}-set-ntpp`)
+
+              ncpp.setAttribute('value', studentsList[k].grades[materia].ncpp)
+              ncpp.setAttribute('class', `${k}-set-ncpp`)
+
+              ncipp.setAttribute('value', studentsList[k].grades[materia].ncipp)
+              ncipp.setAttribute('class',`${k}-set-ncipp`)
+
+              nsepp.setAttribute('value', studentsList[k].grades[materia].nsepp)
+              nsepp.setAttribute('class',`${k}-set-nsepp`)
+
+              nsipp.setAttribute('value', studentsList[k].grades[materia].nsipp)
+              nsipp.setAttribute('class',`${k}-set-nsipp`)
+
+              nopp.setAttribute('value', studentsList[k].grades[materia].nopp)
+              nopp.setAttribute('class', `${k}-set-nopp`)
+
+              auto_1.setAttribute('value', studentsList[k].grades[materia].auto_1)
+              auto_1.setAttribute('class', `${k}-set-auto-1`)
+
+              coe_1.setAttribute('value', studentsList[k].grades[materia].coe_1)
+              coe_1.setAttribute('class', `${k}-set-coe-1`)
+
+              listPP.append(liPP)
+              listPP.append(divPP)
+              divPP.append(nupp, ndpp, ntpp, ncpp, ncipp, nsepp, nsipp, nopp, auto_1, coe_1, btn_submit_grades_1)
+              */
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+//register marks
+$(".submit-first-period").on("click", function(){
+  var address = $(this).attr("href")
+  console.log(address)
+  var set_nupp = $(`.${address}-set-nupp`).val()
+  var set_ndpp = $(`.${address}-set-ndpp`).val()
+  var set_ntpp = $(`.${address}-set-ntpp`).val()
+  var set_ncpp = $(`.${address}-set-ncpp`).val()
+  var set_ncipp = $(`.${address}-set-ncipp`).val()
+  var set_nsepp = $(`.${address}-set-nsepp`).val()
+  var set_nsipp = $(`.${address}-set-nsipp`).val()
+  var set_nopp = $(`.${address}-set-nopp`).val()
+  var set_nepp = $(`.${address}-set-nepp`).val()
+  var set_auto_1 = $(`.${address}-set-auto-1`).val()
+  var set_coe_1 = $(`.${address}-set-coe-1`).val()
+  var set_obs_1 = $(`.${address}-set-obs-1`).val()
+  console.log(set_nupp)
+    /*ref.child(`users/${address}/grades/${materia}/observation_1`).update({
+      observation: set_obs_1,
+      teacher: data.val()[userId].info.name,
+      subject: materia,
+      date: today
+    })*/
+    ref.child("users/" +address+ "/grades/" + materia + "/").update({
+      nupp: set_nupp,
+      ndpp: set_ndpp,
+      ntpp: set_ntpp,
+      ncpp: set_ncpp,
+      ncipp: set_ncipp,
+      nsepp: set_nsepp,
+      nsipp: set_nsipp,
+      nopp: set_nopp,
+      nepp: set_nepp,
+      auto_1: set_auto_1,
+      coe_1: set_coe_1
+    }).then(result => Materialize.toast("Nota Agregada", 3000))
+      .catch(err => Materialize.toast("Error", 3000))
+})
+
+$(".submit-second-period").on("click", function(){
+  var address = $(this).attr("href")
+  var set_nusp = $(`.${address}-set-nusp`).val()
+  var set_ndsp = $(`.${address}-set-ndsp`).val()
+  var set_ntsp = $(`.${address}-set-ntsp`).val()
+  var set_ncsp = $(`.${address}-set-ncsp`).val()
+  var set_ncisp = $(`.${address}-set-ncisp`).val()
+  var set_nsesp = $(`.${address}-set-nsesp`).val()
+  var set_nsisp = $(`.${address}-set-nsisp`).val()
+  var set_nosp = $(`.${address}-set-nosp`).val()
+  var set_nesp = $(`.${address}-set-nesp`).val()
+  var set_auto_2 = $(`.${address}-set-auto-2`).val()
+  var set_coe_2 = $(`.${address}-set-coe-2`).val()
+  var set_obs_2 = $(`.${address}-set-obs-2`).val()
+  console.log(address)
+  /*ref.child(`users/${address}/grades/${materia}/observation_2`).update({
+      observation: set_obs_2,
+      teacher: data.val()[userId].info.name,
+      subject: materia,
+      date: today
+    })*/
+    ref.child("users/" +address+ "/grades/" + materia + "/").update({
+      nusp: set_nusp,
+      ndsp: set_ndsp,
+      ntsp: set_ntsp,
+      ncsp: set_ncsp,
+      ncisp: set_ncisp,
+      nsesp: set_nsesp,
+      nsisp: set_nsisp,
+      nosp: set_nosp,
+      nesp: set_nesp,
+      auto_2: set_auto_2,
+      coe_2: set_coe_2
+    }).then(result => Materialize.toast("Nota Agregada", 3000))
+      .catch(err => Materialize.toast("Error", 3000))
+})
+
+$(".submit-third-period").on("click", function(){
+  var address = $(this).attr("href")
+  var set_nutp = $(`.${address}-set-nutp`).val()
+  var set_ndtp = $(`.${address}-set-ndtp`).val()
+  var set_nttp = $(`.${address}-set-nttp`).val()
+  var set_nctp = $(`.${address}-set-nctp`).val()
+  var set_ncitp = $(`.${address}-set-ncitp`).val()
+  var set_nsetp = $(`.${address}-set-nsetp`).val()
+  var set_nsitp = $(`.${address}-set-nsitp`).val()
+  var set_notp = $(`.${address}-set-notp`).val()
+  var set_netp = $(`.${address}-set-netp`).val()
+  var set_auto_3 = $(`.${address}-set-auto-3`).val()
+  var set_coe_3 = $(`.${address}-set-coe-3`).val()
+  var set_obs_3 = $(`.${address}-set-obs-3`).val()
+  console.log(address)
+  /*ref.child(`users/${address}/grades/${materia}/observations_`).update({
+      observation: set_obs_3,
+      teacher: data.val()[userId].info.name,
+      subject: materia,
+      date: today
+    })*/
+    ref.child("users/" +address+ "/grades/" + materia + "/").update({
+      //Tercer Periodo
+      nutp: set_nutp,
+      ndtp: set_ndtp,
+      nttp: set_nttp,
+      nctp: set_nctp,
+      ncitp: set_ncitp,
+      nsetp: set_nsetp,
+      nsitp: set_nsitp,
+      notp: set_notp,
+      netp: set_netp,
+      auto_3: set_auto_3,
+      coe_3: set_coe_3
+    }).then(result => Materialize.toast("Nota Agregada", 3000))
+      .catch(err => Materialize.toast("Error", 3000))
+})
+}
+})

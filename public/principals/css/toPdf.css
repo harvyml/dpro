@@ -1,0 +1,22 @@
+body{
+	font-size: 15px;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.info-student{
+	background-color: #f0f0f0;
+}
+.info-student ul{
+	background-color: white;
+}
+
+table{
+	width: 80%;
+}
+
+#grades tr td{
+	padding: 0;
+}

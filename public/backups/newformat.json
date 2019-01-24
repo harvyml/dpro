@@ -1,0 +1,21 @@
+[
+  {{!-- This is comment --}}
+
+  {
+    {{#repeat 25}}
+      "{{int 0 99999}}":{
+        "info":{
+            "code" : "{{int 0 99999}}",
+            "email" : "{{email}}",
+            "group" : "10_2",
+            "id" : "{{int 0 99999999}}",
+            "name" : "{{firstName}} {{lastName}}",
+            "pass" : "harvy2002ml",
+            "phoneNumber" : "{{int 0 9999999}}",
+            "rol" : "student",
+            "user" : "{{firstName}}"
+          }
+      }
+      {{/repeat}}
+}
+]

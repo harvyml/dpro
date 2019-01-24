@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Notas</title>
+	<link rel="stylesheet" href="css/grades.css">
+	<!-- materialize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+</head>
+<body>
+<header class="navbar-fixed">
+ <nav class="nav">
+  <ul>
+   <li><a class="user-name"></a></li>
+   <li><a href="#" id="btn-logout" class="nav-a">logout</a></li>
+  </ul>
+ </nav>
+</header>
+
+<!-- hidden student list -->
+<!-- appears only when the teacher goes into a room -->
+
+ <div class="row">
+  <div class="hidden">
+    <div class="col s12 l8 con-notas">
+     <h3 class="center">Reportes</h3>
+        <ul class="tabs highlight tabs-fixed-width">
+          <li class="tab col s3"><a class="active" href="#primero">Primero</a></li>
+          <li class="tab col s3"><a href="#segundo">Segundo</a></li>
+          <li class="tab col s3"><a href="#tercero">Tercero</a></li>
+        </ul>
+      <div id="primero" class="col s12 list-mark" >
+        <table class="striped bordered tabs-fixed-width centered">
+          <thead>
+            <th class="noExl" style="display: none;">Primer Periodo</th>
+            <th>Director De Grupo</th>
+            <th style="display: none;">Grupo</th>
+            <th>Compromiso en Clase</th>
+            <th>Evaluaciones</th>
+            <th>Trabajo Personal</th>
+            <th class="noExl"><button class="btn hoverable waves export-to-excel-1">Excel</button></th>
+          </thead>
+          <tbody id="stats-first-period">
+            
+          </tbody>
+        </table>
+      </div>
+      <div id="segundo" class="col s12 list-mark" >
+        <table class="striped bordered tabs-fixed-width centered">
+          <thead>
+            <th class="noExl" style="display: none;">Segundo Periodo</th>
+            <th>Director De Grupo</th>
+            <th style="display: none;">Grupo</th>
+            <th>Compromiso en Clase</th>
+            <th>Evaluaciones</th>
+            <th>Trabajo Personal</th>
+            <th class="noExl"><button class="btn hoverable waves export-to-excel-1">Excel</button></th>
+          </thead>
+          <tbody id="stats-second-period">
+            
+          </tbody>
+        </table>
+      </div>
+      <div id="tercero" class="col s12 list-mark" >
+        <table class="striped bordered tabs-fixed-width centered">
+          <thead>
+            <th class="noExl" style="display: none;">Tercer Periodo</th>
+            <th>Director De Grupo</th>
+            <th style="display: none;">Grupo</th>
+            <th>Compromiso en Clase</th>
+            <th>Evaluaciones</th>
+            <th>Trabajo Personal</th>
+            <th class="noExl"><button class="btn hoverable waves export-to-excel-1">Excel</button></th>
+          </thead>
+          <tbody id="stats-third-period">
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col s4 description hide-on-med-and-down" id="description-id">
+      <div class="white-text in-description" style="padding: 20px;">
+        <img src="https://af-production.s3.amazonaws.com/photos/images/76458/original/books.jpg" alt="" width="100%">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe libero similique adipisci placeat, eum aliquam, rem, deserunt natus vel est quod. Odio sapiente odit, ab fugiat quia iste incidunt fugit, asperiores rerum aliquid nobis qui quasi deserunt saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cum aliquid vel in esse a optio ut ipsa? Est, quidem.
+      </div>
+      <div class="button-hide center" style="padding: 20px;">
+        <button class="btn hoverable waves con-rooms-show">Salones</button>
+      </div> 
+    </div>
+  </div>
+ </div>
+
+
+<!-- End -->
+
+
+<!-- Rooms -->
+<div class="row hidden con-rooms">
+
+  <div class="room" id="room-t"><a href="#">T</a>°</div>
+  <div class="room" id="room-1-1"><a href="#">1-1</a>°</div>
+  <div class="room" id="room-1-2"><a href="#">1-2</a>°</div>
+  <div class="room" id="room-2-1"><a href="#">2-1</a>°</div>
+  <div class="room" id="room-2-2"><a href="#">2-2</a>°</div>
+  <div class="room" id="room-3-1"><a href="#">3-1</a>°</div>
+  <div class="room" id="room-3-2"><a href="#">3-2</a>°</div>
+  <div class="room" id="room-4-1"><a href="#">4-1</a>°</div>
+  <div class="room" id="room-4-2"><a href="#">4-2</a>°</div>
+  <div class="room" id="room-5-1"><a href="#">5-1</a>°</div>
+  <div class="room" id="room-5-2"><a href="#">5-2</a>°</div>
+
+  <div class="room" id="room-6-1"><a href="#">6-1</a>°</div>
+  <div class="room" id="room-6-2"><a href="#">6-2</a>°</div>
+  <div class="room" id="room-7-1"><a href="#">7-1</a>°</div>
+  <div class="room" id="room-7-2"><a href="#">7-2</a>°</div>
+  <div class="room" id="room-8-1"><a href="#">8-1</a>°</div>
+  <div class="room" id="room-9-1"><a href="#">8-2</a>°</div>
+  <div class="room" id="room-9-2"><a href="#">9-1</a>°</div>
+  <div class="room" id="room-10-1"><a href="#">9-2</a>°</div>
+  <div class="room" id="room-10-2"><a href="#">10-1</a>°</div>
+  <div class="room" id="room-11-1"><a href="#">10-2</a>°</div>
+  <div class="room" id="room-11-2"><a href="#">11-1</a>°</div>
+  <div class="room" id="room-11-2"><a href="#">11-2</a>°</div>
+
+</div>
+<!-- End -->
+
+    <!-- firebase server -->
+     <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- dev URL -->
+<script src="js/jquery.table2excel.js"></script>
+ <!-- local files -->
+ <script src="js/index.js"></script>
+ <script src="server/server.js"></script>
+ <script src="server/grades.js"></script>
+</body>
+</html>

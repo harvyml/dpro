@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="css/buscador.css">
+   <link rel="stylesheet" href="css/estStyle.css">
+   <link rel="stylesheet" href="css/header.css">
+    
+    <!-- icons materialize -->
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+   <link rel='stylesheet' href='css/chat.css'>
+   <link rel='stylesheet' href='css/inserNotas.css'>
+   <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+   
+    <!-- google icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>DG Diseños Web</title>
+</head>
+<body>
+  <script src="js/jquery.min.js"></script>
+  <script src="../materialize/js/materialize.min.js"></script>
+   
+  
+   
+      
+      
+      <header id="header-register">
+       <nav class="nav nav-header" id="nav">
+           
+      <!-- muestra de nombre de usuario -->
+             
+      <ul>
+            
+            <li class="li-nav li-nav1">
+            <a href="index.html" class="a-1 a-li-nav">Inicio</a>
+            </li>
+            
+            <li class="li-nav"><a href='chat.html' class='a-2 a-li-nav'>Chat</a><!-- cambia por servicios cuando hay una sesion activa --></li>
+            
+            <li class="li-nav"><a href="account.html" class="a-3 a-li-nav">Mi Cuenta</a></li>
+            
+            <li class="li-nav"><a href='register.html' class='a-4 a-li-nav'>Noticias</a><!-- se elimina cuando hay una sesion activa --></li>
+
+            <li class="li-nav"><a class='login2' href='iniciar.html'>Login</a></li>
+      </ul>
+          
+      <!-- fin de seccion de navegacion -->
+    
+      <a class="btn btn-floating hoverable" id="menu-icon" href="#modal1" data-target="modal1"><i class="material-icons">menu</i></a> 
+
+      <p class="p-user"></p>
+
+        </nav>
+        
+        <!-- incluyo la version del nav para celulares -->
+        <!-- .p-user: Esta clase está definida en el codigo PHP -->        
+        
+    </header>
+
+
+<div class="container con-notas">
+
+<div class="info-colegio">
+  <img src="http://3.bp.blogspot.com/-UDfm3Me0mLQ/VrUA9xMQHdI/AAAAAAAAAKk/u-1zNW83Rjg/s1600-r/logo%2Bblog.jpg" alt="Logo" id="img-colegio">
+  
+  <div class="text-info-colegio">
+
+  <h4 class="title-h4">Colegio la presentación el paraiso</h4>
+
+  <p class="p-info-colegio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, ad, explicabo? Doloremque suscipit perferendis quae quisquam, amet quasi accusantium soluta ducimus aperiam molestiae distinctio officia expedita neque est nisi illo, tempore explicabo ipsa facere nam! Odit, ipsum. Nesciunt, accusantium, ab.</p>
+  
+  </div>
+</div>
+        
+    <h3 class="titulo-nom h3-titulo"><?php echo $nom; ?></h3>  
+
+    <div class="btn-show-notas">
+      <i class="material-icons">menu</i>Mostrar Notas
+    </div>     
+            
+ <div class="row" id="menu-notas">
+    <div class="col s12">
+
+    <h5 class="title h5 title-h5-periodo">Periodos: <span id="codigo-js"><?php echo $codEstu; ?></span></h5>
+
+      <ul class="tabs">
+
+        <li class="tab col s4 li-mat hoverable"><a href="#test1">Primero</a></li>
+        <li class="tab col s4 li-mat hoverable"><a href="#test2">Segundo</a></li>
+        <li class="tab col s4 li-mat hoverable"><a href="#test3">Tercero</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12 div-notas">
+         <table class="responsive-table table-notas highlight">
+        <thead>
+          <tr>
+              <th>Materia</th>
+              <th>Mitad de Periodo</th>
+              <th>Nota Final</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><?php echo $materia1;?></td>
+            <td><?php echo $ppm1; ?></td>
+            <td><?php echo $ppt1; ?></td>
+          </tr>
+        
+        <tr>
+            <td><?php echo $materia2;?></td>
+            <td><?php echo $ppm2; ?></td>
+            <td><?php echo $ppt2; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia3;?></td>
+            <td><?php echo $ppm3; ?></td>
+            <td><?php echo $ppt3; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia4;?></td>
+            <td><?php echo $ppm4; ?></td>
+            <td><?php echo $ppt4; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia5;?></td>
+            <td><?php echo $ppm5; ?></td>
+            <td><?php echo $ppt5; ?></td>
+          </tr>
+
+        </tbody>
+      </table>
+            
+    </div>
+
+    <div id="test2" class="col s12 div-notas">
+        
+         <table class="responsive-table">
+        <thead>
+          <tr>
+              <th>Materia</th>
+              <th>Mitad de Periodo</th>
+              <th>Nota Final</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><?php echo $materia1;?></td>
+            <td><?php echo $spm1; ?></td>
+            <td><?php echo $spt1; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia2;?></td>
+            <td><?php echo $spm2; ?></td>
+            <td><?php echo $spt2; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia3;?></td>
+            <td><?php echo $spm3; ?></td>
+            <td><?php echo $spt3; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia4;?></td>
+            <td><?php echo $spm4; ?></td>
+            <td><?php echo $spt4; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia5;?></td>
+            <td><?php echo $spm5; ?></td>
+            <td><?php echo $spt5; ?></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="test3" class="col s12 div-notas">
+        <table class="responsive-table">
+        <thead>
+          <tr>
+              <th>Materia</th>
+              <th>Mitad de Periodo</th>
+              <th>Nota Final</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><?php echo $materia1;?></td>
+            <td><?php echo $tpm1; ?></td>
+            <td><?php echo $tpt1; ?></td>
+          </tr>
+
+        <tr>
+            <td><?php echo $materia2;?></td>
+            <td><?php echo $tpm2; ?></td>
+            <td><?php echo $tpt2; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia3;?></td>
+            <td><?php echo $tpm3; ?></td>
+            <td><?php echo $tpt3; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia4;?></td>
+            <td><?php echo $tpm4; ?></td>
+            <td><?php echo $tpt4; ?></td>
+          </tr>
+
+          <tr>
+            <td><?php echo $materia5;?></td>
+            <td><?php echo $spm5; ?></td>
+            <td><?php echo $spt5; ?></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+      
+</div>
+</div>
+
+<!-- modal 1 -->
+
+   <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <h4 id="name-modal1"> <!-- call name from server.js --> </h4>
+        <li id="li-logout"><a href="js/logout.js">Salir</a></li>
+        <li><a href="#"><!-- codigo --></a></li>
+        <li><a href="#">something</a></li>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+
+<!-- modal 2 -->
+
+    <!-- Modal Structure -->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Hola <!-- nombre de usuario -->|</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem odio hic, esse officiis praesentium cupiditate architecto ea deserunt id harum libero dolore distinctio ab maiores cum, officia vero quisquam vel amet magni, dolorum adipisci alias. Perspiciatis recusandae, dolor quae sint similique sed reprehenderit fugit culpa praesentium nostrum tempora maxime enim minima provident qui explicabo dignissimos quod, ut maiores in.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">De Acuerdo</a>
+    </div>
+  </div>
+
+
+    <script src="js/parallax.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/phone.js"></script>
+    <script src="js/modal.js"></script>
+
+    <!-- ajax -->
+
+    <!-- firebase server -->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="server/all.js"></script>
+    
+
+</body>
+</html>

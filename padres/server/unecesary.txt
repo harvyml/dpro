@@ -1,0 +1,766 @@
+
+const txtEmail = $("#input-email-1")
+const txtClave = $("#input-clave-1")
+const auth = firebase.auth();
+
+  $("#btn-1").on("click", e =>{
+
+    const email = txtEmail.val();
+    const pass = txtClave.val(); 
+    
+
+    const promise = auth.signInWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+
+    if(promise){
+      $(".li-nav1 a").html(email)
+    }else{
+      alert("no lo estas")
+    }
+
+/*------------------ register -------------------*/
+
+
+
+
+    
+/*
+    var email = $("#input-cod-1").val()
+    var password = $("#input-clave-1").val()
+
+   var provider = new firebase.auth.GoogleAuthProvider();
+   
+
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+
+
+  /*------------------------ fin de register -----------------------*/
+
+  /*-------------------------- user info ----------------------------
+}).then(function(data){
+  var user = firebase.auth().currentUser;
+
+if (user != null) {
+  user.providerData.forEach(function (profile) {
+
+    var userData =(
+   " <p>Sign-in provider: "+profile.providerId +
+   "  Provider-specific UID: "+profile.uid +
+   "  Name: "+profile.displayName +
+   "  Email: "+profile.email +
+   "  Photo URL: "+profile.photoURL + "</p>"
+   )
+
+    $("#user-content").html(userData)
+
+  });
+}else{
+  console.log("logeate")
+}
+}).then(function(onA){
+   var user = firebase.auth().currentUser;
+
+if(user){
+  console.log("en sesion");
+}else{
+  console.log("sin sesion");
+}
+
+})*/
+
+
+
+
+})
+
+  // signup
+
+$("#btn-2").on("click", e =>{
+
+    const email = txtEmail.val();
+    const pass = txtClave.val(); 
+    
+
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+
+    if(promise){
+      $(".li-nav1 a").html(email)
+    }else{
+      alert("no lo estas")
+    }
+
+
+  })
+
+// Estatus
+
+auth.onAuthStateChanged(firebaseUser => {
+    if(firebaseUser){
+      console.log(firebaseUser);  
+      console.log("logged in")
+    }else{
+      console.log("not logged in")
+    }
+
+})
+
+
+/*----------------------- sesion -----------------------*/
+
+
+/*--------------------- other pages --------------------
+
+$(document).on("ready", function(){
+  var user = firebase.auth().currentUser;
+
+if(user){
+  console.log("en sesion");
+}else{
+  console.log("sin sesion");
+}
+})
+
+*/
+
+
+// normal login
+
+/*-------------------------- login --------------------------*/
+
+// constants
+
+const txtUser = $("#input-user-1");
+const txtEmail = $("#input-email-1");
+const txtPassword = $("#input-clave-1");
+const txtCodigo = $("#input-codigo-1");
+const txtTelefono = $("#input-telefono-1");
+const btnLogin = $("#btnLogin");
+const btnSignUp = $("#btnSignUp");
+const btnLogOut = $("#btnLogOut");
+
+
+
+// Sign In
+btnLogin.on("click", e => {
+  // Get Email and Pass
+  
+  const email = txtEmail.val(); 
+  const pass = txtPassword.val();
+  const codigo = txtCodigo.val();
+  const auth = firebase.auth();
+
+  const promise = auth.signInWithEmailAndPassword(email, pass);
+  promise.catch( e => console.log(e.message));
+    
+    
+
+
+});
+
+
+    
+    
+    
+// Sign Up
+
+btnSignUp.on("click", e => {
+  // Get Email and Pass
+  
+  const email = txtEmail.val();
+  const user = txtUser.val(); 
+  const pass = txtPassword.val();
+  const codigo = txtCodigo.val();
+  const telefono = txtTelefono.val();
+  const auth = firebase.auth();
+
+  //Sign Up
+
+  const promise = auth.createUserWithEmailAndPassword(email, pass);
+  promise.catch( e => console.log(e.message));
+
+
+    // Add to database
+    
+    firebase.database().ref('users/').push({
+
+  codigo:{
+    email: email,
+    user: user,
+    codigo: codigo,
+    telefono: telefono
+  }
+
+  })
+
+
+})
+
+
+// Realtime listener
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if(firebaseUser){
+    console.log(firebaseUser);
+    console.log("logged In");
+
+    const email = firebaseUser.email;
+    const codigo = txtCodigo;
+    
+    // catch the student´s code
+    
+    var ref = firebase.database().ref("users").orderByChild("codigo").equalTo(20126026);
+    console.log(firebaseUser.token);
+    // add changes...
+
+    // add the information instead the form
+
+    $("#col-login").html("<h4 class='title-h4 title-form'>Login</h4><p id='text-after-login'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus sed explicabo ad odio libero laboriosam molestias, beatae nisi, minima voluptatum provident quis placeat officia velit quidem aliquid tenetur. Recusandae nesciunt, eveniet laudantium nam fugiat, voluptate eius similique suscipit aliquam incidunt.</p>");
+
+    // add the name to the modal1
+
+    $("#name-modal1").text(email);
+
+  } else{
+    console.log("Not logged in");
+  }
+
+
+  })
+
+
+
+
+
+// Log Out
+
+$("#li-logout").on("click", e => {
+  firebase.auth().signOut();
+});
+
+
+/*----------------------------------------*/
+
+
+
+
+
+// ANOTHER WAY OF SHOWING MARKS
+      //mat_1 = matematica
+      //mat_2 = quimica
+      //mat_3 = filosofia
+      //mat_4 = español
+      //mat_5 = espiritu emprendedor
+      //mat_6 = musica
+      //mat_7 = ciencias naturales
+      //mat_8 = teorias administrativas
+      //mat_9 = fundamentos de economia
+      //mat_10 = catedra de paz
+      //mat_11 = sistemas
+      //mat_12 = etica y valores
+      //mat_13 = comprension de textos
+      //mat_14 = religion
+      //mat_15 = contabilidad
+      //mat_16 = educacion fisica
+      //mat_17 = fisica
+      //mat_18 = ingles
+      //mat_19 = estadisticas 
+
+      // Primer Periodo
+      /*
+      var mat_1_ppm = gsnapshot.val().matematica.ppm;
+      var mat_1_ppt = gsnapshot.val().matematica.ppt;
+      //--------
+      var mat_2_ppm = gsnapshot.val().quimica.ppm;
+      var mat_2_ppt = gsnapshot.val().quimica.ppt;
+      //--------
+      var mat_3_ppm = gsnapshot.val().filosofia.ppm;
+      var mat_3_ppt = gsnapshot.val().filosofia.ppt;
+       //--------
+      var mat_4_ppm = gsnapshot.val().Español.ppm;
+      var mat_4_ppt = gsnapshot.val().Español.ppt;
+       //--------
+      var mat_5_ppm = gsnapshot.val().Espiritu_Emprendedor.ppm;
+      var mat_5_ppt = gsnapshot.val().Espiritu_Emprendedor.ppt;
+       //--------
+      var mat_6_ppm = gsnapshot.val().Musica.ppm;
+      var mat_6_ppt = gsnapshot.val().Musica.ppt;
+       //--------
+      var mat_7_ppm = gsnapshot.val().Ciencias_Naturales.ppm;
+      var mat_7_ppt = gsnapshot.val().Ciencias_Naturales.ppt;
+       //--------
+      var mat_8_ppm = gsnapshot.val().Teorias_Administrativas.ppm;
+      var mat_8_ppt = gsnapshot.val().Teorias_Administrativas.ppt;
+       //--------
+      var mat_9_ppm = gsnapshot.val().Fundamentos_de_Economia.ppm;
+      var mat_9_ppt = gsnapshot.val().Fundamentos_de_Economia.ppt;
+       //--------
+      var mat_10_ppm = gsnapshot.val().Catedra_de_Paz.ppm;
+      var mat_10_ppt = gsnapshot.val().Catedra_de_Paz.ppt;
+       //-------
+      var mat_11_ppm = gsnapshot.val().sistemas.ppm;
+      var mat_11_ppt = gsnapshot.val().sistemas.ppt;
+       //--------
+      var mat_12_ppm = gsnapshot.val().Etica_y_Valores.ppm;
+      var mat_12_ppt = gsnapshot.val().Etica_y_Valores.ppt;
+       //--------
+      var mat_13_ppm = gsnapshot.val().Comprension_de_textos.ppm;
+      var mat_13_ppt = gsnapshot.val().Comprension_de_textos.ppt;
+       //--------
+      var mat_14_ppm = gsnapshot.val().Religion.ppm;
+      var mat_14_ppt = gsnapshot.val().Religion.ppt;
+       //--------
+      var mat_15_ppm = gsnapshot.val().Contabilidad.ppm;
+      var mat_15_ppt = gsnapshot.val().Contabilidad.ppt;
+       //--------
+      var mat_16_ppm = gsnapshot.val().Educacion_Fisica.ppm;
+      var mat_16_ppt = gsnapshot.val().Educacion_Fisica.ppt;
+       //--------
+      var mat_17_ppm = gsnapshot.val().Fisica.ppm;
+      var mat_17_ppt = gsnapshot.val().Fisica.ppt;
+       //--------
+      var mat_18_ppm = gsnapshot.val().Ingles.ppm;
+      var mat_18_ppt = gsnapshot.val().Ingles.ppt;
+       //--------
+      var mat_19_ppm = gsnapshot.val().Estadistica.ppm;
+      var mat_19_ppt = gsnapshot.val().Estadistica.ppt;
+       //--------
+
+      $(".mat-1").text("Matematica");
+      $("#mat-1-ppm").text(mat_1_ppm);
+      $("#mat-1-ppt").text(mat_1_ppt);
+      //---------
+      $(".mat-2").text("Quimica");
+      $("#mat-2-ppm").text(mat_2_ppm);
+      $("#mat-2-ppt").text(mat_2_ppt);
+      //---------
+      $(".mat-3").text("Filosofia");
+      $("#mat-3-ppm").text(mat_3_ppm);
+      $("#mat-3-ppt").text(mat_3_ppt);
+      //---------
+      $(".mat-4").text("Español");
+      $("#mat-4-ppm").text(mat_4_ppm);
+      $("#mat-4-ppt").text(mat_4_ppt);
+      //---------
+      $(".mat-5").text("Espiritu Emprendedor");
+      $("#mat-5-ppm").text(mat_5_ppm);
+      $("#mat-5-ppt").text(mat_5_ppt);
+      //---------
+      $(".mat-6").text("Musica");
+      $("#mat-6-ppm").text(mat_6_ppm);
+      $("#mat-6-ppt").text(mat_6_ppt);
+       //---------
+      $(".mat-7").text("Ciencias Naturales");
+      $("#mat-7-ppm").text(mat_7_ppm);
+      $("#mat-7-ppt").text(mat_7_ppt);
+       //---------
+      $(".mat-8").text("Teorias Administrativas");
+      $("#mat-8-ppm").text(mat_8_ppm);
+      $("#mat-8-ppt").text(mat_8_ppt);
+       //---------
+      $(".mat-9").text("Fundamentos de Economia");
+      $("#mat-9-ppm").text(mat_9_ppm);
+      $("#mat-9-ppt").text(mat_9_ppt);
+      //---------
+      $(".mat-10").text("Catedra de Paz");
+      $("#mat-10-ppm").text(mat_10_ppm);
+      $("#mat-10-ppt").text(mat_10_ppt);
+      //---------
+      $(".mat-11").text("Sistemas");
+      $("#mat-11-ppm").text(mat_11_ppm);
+      $("#mat-11-ppt").text(mat_11_ppt);
+        //---------
+      $(".mat-12").text("Etica y Valores");
+      $("#mat-12-ppm").text(mat_12_ppm);
+      $("#mat-12-ppt").text(mat_12_ppt);
+        //---------
+      $(".mat-13").text("Compresion de Textos");
+      $("#mat-13-ppm").text(mat_13_ppm);
+      $("#mat-13-ppt").text(mat_13_ppt);
+        //---------
+      $(".mat-14").text("Religion");
+      $("#mat-14-ppm").text(mat_14_ppm);
+      $("#mat-14-ppt").text(mat_14_ppt);
+        //---------
+      $(".mat-15").text("Contabilidad");
+      $("#mat-15-ppm").text(mat_15_ppm);
+      $("#mat-15-ppt").text(mat_15_ppt);
+        //---------
+      $(".mat-16").text("Educacion Fisica");
+      $("#mat-16-ppm").text(mat_16_ppm);
+      $("#mat-16-ppt").text(mat_16_ppt);
+        //---------
+      $(".mat-17").text("Fisica");
+      $("#mat-17-ppm").text(mat_17_ppm);
+      $("#mat-17-ppt").text(mat_17_ppt);
+        //---------
+      $(".mat-18").text("Ingles");
+      $("#mat-18-ppm").text(mat_18_ppm);
+      $("#mat-18-ppt").text(mat_18_ppt);
+        //---------
+      $(".mat-19").text("Estadistica");
+      $("#mat-19-ppm").text(mat_19_ppm);
+      $("#mat-19-ppt").text(mat_19_ppt);
+
+  //Aqui empieza el Segundo Periodo
+
+      console.log( gsnapshot.val().matematica.ppm )
+      //mat_1 = matematica
+      //mat_2 = quimica
+      //mat_3 = filosofia
+      //mat_4 = español
+      //mat_5 = espiritu emprendedor
+      //mat_6 = musica
+      //mat_7 = ciencias naturales
+      //mat_8 = teorias administrativas
+      //mat_9 = fundamentos de economia
+      //mat_10 = catedra de paz
+      //mat_11 = sistemas
+      //mat_12 = etica y valores
+      //mat_13 = comprension de textos
+      //mat_14 = religion
+      //mat_15 = contabilidad
+      //mat_16 = educacion fisica
+      //mat_17 = fisica
+      //mat_18 = ingles
+      //mat_19 = estadisticas 
+
+      // Segundo Periodo
+      var mat_1_spm = gsnapshot.val().matematica.spm;
+      var mat_1_spt = gsnapshot.val().matematica.spt;
+      //--------
+      var mat_2_spm = gsnapshot.val().quimica.spm;
+      var mat_2_spt = gsnapshot.val().quimica.spt;
+      //--------
+      var mat_3_spm = gsnapshot.val().filosofia.spm;
+      var mat_3_spt = gsnapshot.val().filosofia.spt;
+       //--------
+      var mat_4_spm = gsnapshot.val().Español.spm;
+      var mat_4_spt = gsnapshot.val().Español.spt;
+       //--------
+      var mat_5_spm = gsnapshot.val().Espiritu_Emprendedor.spm;
+      var mat_5_spt = gsnapshot.val().Espiritu_Emprendedor.spt;
+       //--------
+      var mat_6_spm = gsnapshot.val().Musica.spm;
+      var mat_6_spt = gsnapshot.val().Musica.spt;
+       //-------
+      var mat_7_spm = gsnapshot.val().Ciencias_Naturales.spm;
+      var mat_7_spt = gsnapshot.val().Ciencias_Naturales.spt;
+       //--------
+      var mat_8_spm = gsnapshot.val().Teorias_Administrativas.spm;
+      var mat_8_spt = gsnapshot.val().Teorias_Administrativas.spt;
+       //--------
+      var mat_9_spm = gsnapshot.val().Fundamentos_de_Economia.spm;
+      var mat_9_spt = gsnapshot.val().Fundamentos_de_Economia.spt;
+       //--------
+      var mat_10_spm = gsnapshot.val().Catedra_de_Paz.spm;
+      var mat_10_spt = gsnapshot.val().Catedra_de_Paz.spt;
+       //-------
+      var mat_11_spm = gsnapshot.val().sistemas.spm;
+      var mat_11_spt = gsnapshot.val().sistemas.spt;
+       //--------
+      var mat_12_spm = gsnapshot.val().Etica_y_Valores.spm;
+      var mat_12_spt = gsnapshot.val().Etica_y_Valores.spt;
+       //--------
+      var mat_13_spm = gsnapshot.val().Comprension_de_textos.spm;
+      var mat_13_spt = gsnapshot.val().Comprension_de_textos.spt;
+       //--------
+      var mat_14_spm = gsnapshot.val().Religion.spm;
+      var mat_14_spt = gsnapshot.val().Religion.spt;
+       //--------
+      var mat_15_spm = gsnapshot.val().Contabilidad.spm;
+      var mat_15_spt = gsnapshot.val().Contabilidad.spt;
+       //--------
+      var mat_16_spm = gsnapshot.val().Educacion_Fisica.spm;
+      var mat_16_spt = gsnapshot.val().Educacion_Fisica.spt;
+       //--------
+      var mat_17_spm = gsnapshot.val().Fisica.spm;
+      var mat_17_spt = gsnapshot.val().Fisica.spt;
+       //--------
+      var mat_18_spm = gsnapshot.val().Ingles.spm;
+      var mat_18_spt = gsnapshot.val().Ingles.spt;
+       //--------
+      var mat_19_spm = gsnapshot.val().Estadistica.spm;
+      var mat_19_spt = gsnapshot.val().Estadistica.spt;
+       //--------
+
+      
+      $("#mat-1-spm").text(mat_1_spm);
+      $("#mat-1-spt").text(mat_1_spt);
+      //---------
+     
+      $("#mat-2-spm").text(mat_2_spm);
+      $("#mat-2-spt").text(mat_2_spt);
+      //---------
+      
+      $("#mat-3-spm").text(mat_3_spm);
+      $("#mat-3-spt").text(mat_3_spt);
+      //--------
+      
+      $("#mat-4-spm").text(mat_4_spm);
+      $("#mat-4-spt").text(mat_4_spt);
+      //---------
+      
+      $("#mat-5-spm").text(mat_5_spm);
+      $("#mat-5-spt").text(mat_5_spt);
+      //--------
+      
+      $("#mat-6-spm").text(mat_6_spm);
+      $("#mat-6-spt").text(mat_6_spt);
+       //---------
+     
+      $("#mat-7-spm").text(mat_7_spm);
+      $("#mat-7-spt").text(mat_7_spt);
+       //---------
+      
+      $("#mat-8-spm").text(mat_8_spm);
+      $("#mat-8-spt").text(mat_8_spt);
+       //---------
+      
+      $("#mat-9-spm").text(mat_9_spm);
+      $("#mat-9-spt").text(mat_9_spt);
+      //---------
+      
+      $("#mat-10-spm").text(mat_10_spm);
+      $("#mat-10-spt").text(mat_10_spt);
+      //---------
+      
+      $("#mat-11-spm").text(mat_11_spm);
+      $("#mat-11-spt").text(mat_11_spt);
+        //---------
+      
+      $("#mat-12-spm").text(mat_12_spm);
+      $("#mat-12-spt").text(mat_12_spt);
+        //---------
+      
+      $("#mat-13-spm").text(mat_13_spm);
+      $("#mat-13-spt").text(mat_13_spt);
+        //---------
+      
+      $("#mat-14-spm").text(mat_14_spm);
+      $("#mat-14-spt").text(mat_14_spt);
+        //---------
+      
+      $("#mat-15-spm").text(mat_15_spm);
+      $("#mat-15-spt").text(mat_15_spt);
+        //---------
+      
+      $("#mat-16-spm").text(mat_16_spm);
+      $("#mat-16-spt").text(mat_16_spt);
+        //--------
+      
+      $("#mat-17-spm").text(mat_17_spm);
+      $("#mat-17-spt").text(mat_17_spt);
+        //---------
+     
+      $("#mat-18-spm").text(mat_18_spm);
+      $("#mat-18-spt").text(mat_18_spt);
+        //---------
+      
+      $("#mat-19-spm").text(mat_19_spm);
+      $("#mat-19-spt").text(mat_19_spt);
+
+//Aqui empieza el Tercer Periodo
+
+      console.log( gsnapshot.val().matematica.ppm )
+      //mat_1 = matematica
+      //mat_2 = quimica
+      //mat_3 = filosofia
+      //mat_4 = español
+      //mat_5 = espiritu emprendedor
+      //mat_6 = musica
+      //mat_7 = ciencias naturales
+      //mat_8 = teorias administrativas
+      //mat_9 = fundamentos de economia
+      //mat_10 = catedra de paz
+      //mat_11 = sistemas
+      //mat_12 = etica y valores
+      //mat_13 = comprension de textos
+      //mat_14 = religion
+      //mat_15 = contabilidad
+      //mat_16 = educacion fisica
+      //mat_17 = fisica
+      //mat_18 = ingles
+      //mat_19 = estadisticas 
+
+      // Tercer Periodo
+      var mat_1_tpm = gsnapshot.val().matematica.tpm;
+      var mat_1_tpt = gsnapshot.val().matematica.tpt;
+      //--------
+      var mat_2_tpm = gsnapshot.val().quimica.tpm;
+      var mat_2_tpt = gsnapshot.val().quimica.tpt;
+      //--------
+      var mat_3_tpm = gsnapshot.val().filosofia.tpm;
+      var mat_3_tpt = gsnapshot.val().filosofia.tpt;
+       //--------
+      var mat_4_tpm = gsnapshot.val().Español.tpm;
+      var mat_4_tpt = gsnapshot.val().Español.tpt;
+       //--------
+      var mat_5_tpm = gsnapshot.val().Espiritu_Emprendedor.tpm;
+      var mat_5_tpt = gsnapshot.val().Espiritu_Emprendedor.tpt;
+       //--------
+      var mat_6_tpm = gsnapshot.val().Musica.tpm;
+      var mat_6_tpt = gsnapshot.val().Musica.tpt;
+       //-------
+      var mat_7_tpm = gsnapshot.val().Ciencias_Naturales.tpm;
+      var mat_7_tpt = gsnapshot.val().Ciencias_Naturales.tpt;
+       //--------
+      var mat_8_tpm = gsnapshot.val().Teorias_Administrativas.tpm;
+      var mat_8_tpt = gsnapshot.val().Teorias_Administrativas.tpt;
+       //--------
+      var mat_9_tpm = gsnapshot.val().Fundamentos_de_Economia.tpm;
+      var mat_9_tpt = gsnapshot.val().Fundamentos_de_Economia.tpt;
+       //--------
+      var mat_10_tpm = gsnapshot.val().Catedra_de_Paz.tpm;
+      var mat_10_tpt = gsnapshot.val().Catedra_de_Paz.tpt;
+       //-------
+      var mat_11_tpm = gsnapshot.val().sistemas.tpm;
+      var mat_11_tpt = gsnapshot.val().sistemas.tpt;
+       //--------
+      var mat_12_tpm = gsnapshot.val().Etica_y_Valores.tpm;
+      var mat_12_tpt = gsnapshot.val().Etica_y_Valores.tpt;
+       //--------
+      var mat_13_tpm = gsnapshot.val().Comprension_de_textos.tpm;
+      var mat_13_tpt = gsnapshot.val().Comprension_de_textos.tpt;
+       //--------
+      var mat_14_tpm = gsnapshot.val().Religion.tpm;
+      var mat_14_tpt = gsnapshot.val().Religion.tpt;
+       //--------
+      var mat_15_tpm = gsnapshot.val().Contabilidad.tpm;
+      var mat_15_tpt = gsnapshot.val().Contabilidad.tpt;
+       //--------
+      var mat_16_tpm = gsnapshot.val().Educacion_Fisica.tpm;
+      var mat_16_tpt = gsnapshot.val().Educacion_Fisica.tpt;
+       //-------
+      var mat_17_tpm = gsnapshot.val().Fisica.tpm;
+      var mat_17_tpt = gsnapshot.val().Fisica.tpt;
+       //--------
+      var mat_18_tpm = gsnapshot.val().Ingles.tpm;
+      var mat_18_tpt = gsnapshot.val().Ingles.tpt;
+       //--------
+      var mat_19_tpm = gsnapshot.val().Estadistica.tpm;
+      var mat_19_tpt = gsnapshot.val().Estadistica.tpt;
+       //--------
+
+      
+      $("#mat-1-tpm").text(mat_1_tpm);
+      $("#mat-1-tpt").text(mat_1_tpt);
+      //---------
+     
+      $("#mat-2-tpm").text(mat_2_tpm);
+      $("#mat-2-tpt").text(mat_2_tpt);
+      //---------
+      
+      $("#mat-3-tpm").text(mat_3_tpm);
+      $("#mat-3-tpt").text(mat_3_tpt);
+      //--------
+      
+      $("#mat-4-tpm").text(mat_4_tpm);
+      $("#mat-4-tpt").text(mat_4_tpt);
+      //---------
+      
+      $("#mat-5-tpm").text(mat_5_tpm);
+      $("#mat-5-tpt").text(mat_5_tpt);
+      //--------
+      
+      $("#mat-6-tpm").text(mat_6_tpm);
+      $("#mat-6-tpt").text(mat_6_tpt);
+       //---------
+     
+      $("#mat-7-tpm").text(mat_7_tpm);
+      $("#mat-7-tpt").text(mat_7_tpt);
+       //---------
+      
+      $("#mat-8-tpm").text(mat_8_tpm);
+      $("#mat-8-tpt").text(mat_8_tpt);
+       //---------
+      
+      $("#mat-9-tpm").text(mat_9_tpm);
+      $("#mat-9-tpt").text(mat_9_tpt);
+      //---------
+      
+      $("#mat-10-tpm").text(mat_10_tpm);
+      $("#mat-10-tpt").text(mat_10_tpt);
+      //---------
+      
+      $("#mat-11-tpm").text(mat_11_tpm);
+      $("#mat-11-tpt").text(mat_11_tpt);
+        //---------
+      
+      $("#mat-12-tpm").text(mat_12_tpm);
+      $("#mat-12-tpt").text(mat_12_tpt);
+        //--------
+      
+      $("#mat-13-tpm").text(mat_13_tpm);
+      $("#mat-13-tpt").text(mat_13_tpt);
+        //---------
+      
+      $("#mat-14-tpm").text(mat_14_tpm);
+      $("#mat-14-tpt").text(mat_14_tpt);
+        //---------
+      
+      $("#mat-15-tpm").text(mat_15_tpm);
+      $("#mat-15-tpt").text(mat_15_tpt);
+        //---------
+      
+      $("#mat-16-tpm").text(mat_16_tpm);
+      $("#mat-16-tpt").text(mat_16_tpt);
+        //--------
+      
+      $("#mat-17-tpm").text(mat_17_tpm);
+      $("#mat-17-tpt").text(mat_17_tpt);
+        //---------
+     
+      $("#mat-18-tpm").text(mat_18_tpm);
+      $("#mat-18-tpt").text(mat_18_tpt);
+        //---------
+      
+      $("#mat-19-tpm").text(mat_19_tpm);
+      $("#mat-19-tpt").text(mat_19_tpt);
+      */
+
+      // TO FIX
+      $("#dropdown1 a").on("click", function(){
+  var clickedSubject = $(this).text()
+  console.log(clickedSubject)
+
+    const ul = $("#notas")
+    const keyname = $("#input-code-1").val();
+    var refGrade = firebase.database().ref().child("studentsList/" + userId + "/grades/").orderByKey().equalTo(clickedSubject)
+    refGrade.on("value", data => {
+      console.log(data.val())
+      var grades = data.val()
+      var keys = Object.keys(grades)
+      console.log(keys)
+
+      for (var i = 0; i < keys.length; i++){
+        var k = keys[i]
+        //var matematica = grades[k].grades.matematica;
+        //var musica = grades[k].grades.Musica;
+        var ppm = ppm.val()
+                 
+        var li = document.createElement("li")
+        li.innerText = "Primera Nota" + ppm;
+
+        ul.append(li)
+
+        console.log(ppm)
+
+      }
+    })
+
+    //---------------------------------------------------------------------------------------

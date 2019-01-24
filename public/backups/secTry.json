@@ -1,0 +1,134 @@
+[
+  {
+    "116": {
+      "info": {
+        "code": "51934",
+        "email": "miles.verde@westgate.co",
+        "group": "10_2",
+        "id": "71172806",
+        "name": "Miles Verde",
+        "pass": "harvy2002ml",
+        "phoneNumber": "7372295",
+        "rol": "student",
+        "user": "Janett"
+      }
+    },
+    "1866": {
+      "info": {
+        "code": "18148",
+        "email": "grace.caffey@nitrosystems.info",
+        "group": "10_2",
+        "id": "6608177",
+        "name": "Grace Caffey",
+        "pass": "harvy2002ml",
+        "phoneNumber": "2543051",
+        "rol": "student",
+        "user": "Travis"
+      }
+    },
+    "11846": {
+      "info": {
+        "code": "52469",
+        "email": "madeleine.latshaw@corerobotics.eu",
+        "group": "10_2",
+        "id": "4626507",
+        "name": "Madeleine Latshaw",
+        "pass": "harvy2002ml",
+        "phoneNumber": "296307",
+        "rol": "student",
+        "user": "Juliana"
+      }
+    },
+    "31987": {
+      "info": {
+        "code": "44309",
+        "email": "andy.pickering@haltheon.com",
+        "group": "10_2",
+        "id": "32533756",
+        "name": "Andy Pickering",
+        "pass": "harvy2002ml",
+        "phoneNumber": "1121013",
+        "rol": "student",
+        "user": "Isabelle"
+      }
+    },
+    "49676": {
+      "info": {
+        "code": "47610",
+        "email": "layla.paquette@skycenta.edu",
+        "group": "10_2",
+        "id": "50951254",
+        "name": "Layla Paquette",
+        "pass": "harvy2002ml",
+        "phoneNumber": "1283635",
+        "rol": "student",
+        "user": "Eleanore"
+      }
+    },
+    "58031": {
+      "info": {
+        "code": "39569",
+        "email": "lyn.castleman@peersys.me",
+        "group": "10_2",
+        "id": "3434521",
+        "name": "Lyn Castleman",
+        "pass": "harvy2002ml",
+        "phoneNumber": "7416248",
+        "rol": "student",
+        "user": "Susana"
+      }
+    },
+    "74339": {
+      "info": {
+        "code": "23323",
+        "email": "alexa.pleiman@omnitouch.edu",
+        "group": "10_2",
+        "id": "53655213",
+        "name": "Alexa Pleiman",
+        "pass": "harvy2002ml",
+        "phoneNumber": "7196193",
+        "rol": "student",
+        "user": "Layla"
+      }
+    },
+    "78976": {
+      "info": {
+        "code": "4167",
+        "email": "haydee.luck@galcom.eu",
+        "group": "10_2",
+        "id": "55565808",
+        "name": "Haydee Luck",
+        "pass": "harvy2002ml",
+        "phoneNumber": "3497356",
+        "rol": "student",
+        "user": "Cecilia"
+      }
+    },
+    "80934": {
+      "info": {
+        "code": "79015",
+        "email": "russell.friedrich@keysoft.club",
+        "group": "10_2",
+        "id": "54678870",
+        "name": "Russell Friedrich",
+        "pass": "harvy2002ml",
+        "phoneNumber": "8608913",
+        "rol": "student",
+        "user": "Jamie"
+      }
+    },
+    "96871": {
+      "info": {
+        "code": "78434",
+        "email": "rolf.krumm@viewtopia.xyz",
+        "group": "10_2",
+        "id": "6958089",
+        "name": "Rolf Krumm",
+        "pass": "harvy2002ml",
+        "phoneNumber": "6904279",
+        "rol": "student",
+        "user": "Dannielle"
+      }
+    }
+  }
+]

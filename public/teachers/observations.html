@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Maestros | DG</title>
+
+ <link rel="stylesheet" href="css/styles.css">
+
+ <!-- materialize -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar-fixed">
+ <nav class="nav">
+  <ul>
+   <li><a class="user-name user"></a></li>
+   <li><a href="#" id="btn-logout" class="nav-a">logout</a></li>
+  </ul>
+  <a href="#" data-target="slide-out" class="button-collapse sidenav-trigger right"><i class="material-icons">menu</i></a>
+ </nav>
+</header>
+<!-- sidenav -->
+<ul id="slide-out" class="sidenav">
+  <li><div class="user-view-edited">
+    <div class="background-edited" height="auto">
+      <img src="https://enova.mx/wp-content/uploads/2017/12/sitio-web-educacion.jpg" width="100%">
+    </div>
+  </div></li>
+  <li><a href="#!"><i class="material-icons">person</i><span class="user"></span></a></li>
+  <li><a href="#!"><span class="email"></span></a></li>
+  <li><div class="divider"></div></li>
+  <li><a class="subheader">Opciones</a></li>
+  <li><a class="waves-effect li-logout" href="#!">Cerrar Sesión</a></li>
+</ul>
+<!-- sidenav -->
+ <div class="row">
+    <div class="col s12 con-notas">
+     <h3 class="center">Observador</h3>
+      <div class="seek">
+        <div class="conditionals" style="display: flex; justify-content: space-around;">
+          <div class="input-field">
+            <input type="number" placeholder="Periodo" id="period">
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Grupo" id="group">
+          </div>
+          <div class="input-field">
+            <select class="browser-default black-text" id="choose-subject">
+              <option value="" disabled selected>Escoge Tu Materia</option>
+
+            </select>
+          </div>
+          <div class="input-field">
+            <button class="hoverable waves btn set-conditions">Set</button>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" id="seeker">
+          <label for="seeker">Filtrar</label>
+        </div>
+      </div>
+      <table class="striped bordered tabs-fixed-width centered">
+        <thead>
+          <th>Estudiante</th>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          <th>Materia</th>
+          <th>Observacion</th>
+          <th class="noExl" style="display: none;"><button class="btn hoverable waves export-to-excel-1">Excel</button></th>
+        </thead>
+        <tbody id="obs" class="students-data">
+
+        </tbody>
+      </table>
+    </div>
+ </div>
+
+
+<!-- End -->
+
+        <!-- firebase server -->
+     <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+ <!-- local files -->
+ <script src="server/config.js"></script>
+ <script src="js/index.js"></script>
+ <script src="server/all.js"></script> 
+ <script src="server/obs.js"></script>
+</body>
+</html>

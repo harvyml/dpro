@@ -1,0 +1,164 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background: #f9f9f9;
+}
+
+/*scrollbar*/
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #2590F5;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #44899A;
+}
+
+#toast-container{
+	width: 100%;
+}
+
+/**/
+.info, .con-login{
+	margin-bottom: 100px;
+
+}
+
+.span-hide{
+	display: hidden;
+}
+
+.hidden{
+	display: none;
+}
+
+/*----- header ---------*/
+
+.header{
+	width: 100%;
+	vertical-align: top;
+}
+
+/*------- este es el nav principal -------*/
+.nav-header{
+	z-index: 1000;
+	background: #268AFC;
+	position: fixed;
+	margin: 0;
+}
+/*---------------------------*/
+#aside{
+	color: white;
+}
+/*--- usuario y menu desplegable ----*/
+
+.p-user{
+	float: right;
+	margin-right: 3%;
+}
+
+#menu-icon{
+	float: right;
+	background: #268AFC;/* azul claro */
+	color: white;
+	border-radius: 50px;
+	margin-top: 13px;
+	cursor: pointer;
+	margin-right: 14%;
+}
+
+#menu-icon:hover{
+	background: white;
+}
+
+#menu-icon i:hover{
+	color: #268AFC;
+}
+
+#menu-icon i{
+	line-height: 45px;
+}
+
+.li-nav:nth-child(1){
+	margin-left: 14%;
+}
+
+
+
+/*--- imagen del header ----*/
+
+.header-img{
+	height: 100%;
+}
+
+.user-img{
+	width: 50px;
+}
+
+.poster-info p{
+	margin: 20px;
+}
+/*------------------------*/
+
+/*---------- fin del header --------*/
+
+/* --------- seccion de login ---------*/
+
+.con-login{
+	padding-top: 100px;
+}
+
+.input-login:focus{
+	border-bottom: 1px solid #268AFC;
+}
+
+
+input[type=submit]{
+	background: #268AFC;
+}
+
+input[type=submit]:hover{
+	background: #268AFC;
+}
+
+#btn-2{
+	margin-top: 20px;
+}
+
+#button-toggle-sidebar{
+    float: right;
+	color: white;
+	cursor: pointer;
+}
+
+@media (min-width: 0px){
+	#button-toggle-sidebar{
+		display: block;
+	}
+}
+
+
+/* parallax */
+
+
+.parallax-container {
+   height: 1600px;
+}
+
+/*--------------------------------- school-info -----------------------------*/
+
+.school-info .title{
+	margin-top: 40px;
+}
+
+.school-info .img img{
+	margin: auto 0;
+}

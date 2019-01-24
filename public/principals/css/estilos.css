@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.collection-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#toast-container{
+  width: 100%;
+}
+
+#add-director{
+  display: none;
+}#add-subjects{
+  display: none;
+}#add-students{
+  display: none;
+}
+.info-director-hidden, .info-subjects-hidden, .info-students-hidden, .subjects-data, .students-data{
+  display: none;
+}
