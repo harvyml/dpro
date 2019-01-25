@@ -1,6 +1,6 @@
 {
   "rules": {
-    ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false",
-    ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false"
+    ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'student' ? true : false",
+    ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin'? true : false"
   }
 }

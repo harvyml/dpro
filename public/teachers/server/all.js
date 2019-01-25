@@ -135,7 +135,7 @@ $(function(){
                   let average_auto_coe_1 = (nota_auto_1 + nota_coe_1) / 2 * 5 / 100;
 
                   console.log(average_compromiso_en_clase_1, average_evaluacion_final_1, average_evaluaciones_1, average_trabajo_personal_1)
-                  let average_1 = average_compromiso_en_clase_1 + average_evaluacion_final_1 + average_evaluaciones_1 + average_trabajo_personal_1 + average_auto_coe_1;
+                  let average_1 = (average_compromiso_en_clase_1 + average_evaluacion_final_1 + average_evaluaciones_1 + average_trabajo_personal_1 + average_auto_coe_1).toFixed(2);
 
                   //Second period
                   let nota_1_2 = users[k].grades ? parseFloat(users[k].grades[materia].nusp) : 2
@@ -159,7 +159,7 @@ $(function(){
                   let average_auto_coe_2 = (nota_auto_2 + nota_coe_2) / 2 *5 / 100;
 
                   console.log(average_compromiso_en_clase_2, average_evaluacion_final_2, average_evaluaciones_2, average_trabajo_personal_2)
-                  let average_2 = average_compromiso_en_clase_2 + average_evaluacion_final_2 + average_evaluaciones_2 + average_trabajo_personal_2 + average_auto_coe_2;
+                  let average_2 = (average_compromiso_en_clase_2 + average_evaluacion_final_2 + average_evaluaciones_2 + average_trabajo_personal_2 + average_auto_coe_2).toFixed(2);
 
                   //Third Period
                   let nota_1_3 = users[k].grades ? parseFloat(users[k].grades[materia].nutp) : 2
@@ -183,7 +183,7 @@ $(function(){
                   let average_auto_coe_3 = (nota_auto_3 + nota_coe_3) / 2 *5 / 100;
 
                   console.log(average_compromiso_en_clase_3, average_evaluacion_final_3, average_evaluaciones_3, average_trabajo_personal_3)
-                  let average_3 = average_compromiso_en_clase_3 + average_evaluacion_final_3 + average_evaluaciones_3 + average_trabajo_personal_3 + average_auto_coe_3;
+                  let average_3 = (average_compromiso_en_clase_3 + average_evaluacion_final_3 + average_evaluaciones_3 + average_trabajo_personal_3 + average_auto_coe_3).toFixed(2);
                      // Bring all the marks to put them in the value
                       if(clickedLevel == group && rol == "student"){
                         //if(users[k].grades[materia]){
@@ -264,27 +264,7 @@ $(function(){
 
                                                `
                        $("#grades-third-period").append(tercerPeriodoHtml)
-                      //}
                        console.log(teacherCode)
-                       /*var observations_1 = Object.keys(users[k].observations_1)
-                       console.log(observations_1)
-                       //console.log(observations_1)
-                       observations_1.forEach(obs_1 => {
-                          console.log(users[k].observations_1[obs_1].code)
-                          console.log(users[k].observations_1[obs_1].teacherName)
-
-                          if(users[k].observations_1[obs_1].code == teacherCode){
-                            var observations = `<div>
-                                                 <span>${users[k].observations_1[obs_1].teacherName}</span>
-                                                 <span>${users[k].observations_1[obs_1].content}</span>
-                                               </div>
-                                               `
-
-                            alert(observations)
-                          }
-                       })*/
-
-
                   }
 
                   $("input").addClass("set-mark-input")
