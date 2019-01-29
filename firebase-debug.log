@@ -1,0 +1,83 @@
+[debug] [2019-01-29T00:36:42.774Z] ----------------------------------------------------------------------
+[debug] [2019-01-29T00:36:42.784Z] Command:       D:\programas\node\node.exe C:\Users\harvy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-01-29T00:36:42.785Z] CLI Version:   6.2.2
+[debug] [2019-01-29T00:36:42.785Z] Platform:      win32
+[debug] [2019-01-29T00:36:42.785Z] Node Version:  v8.9.4
+[debug] [2019-01-29T00:36:42.787Z] Time:          Mon Jan 28 2019 19:36:42 GMT-0500 (Hora est. Pacífico, Sudamérica)
+[debug] [2019-01-29T00:36:42.787Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-01-29T00:36:42.821Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-01-29T00:36:42.822Z] > authorizing via signed-in user
+[debug] [2019-01-29T00:36:42.823Z] [iam] checking project dpro-343c0 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2019-01-29T00:36:42.829Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-01-29T00:36:42.830Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-01-29T00:36:43.402Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T00:36:43.743Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/dpro-343c0:testIamPermissions  
+
+[debug] [2019-01-29T00:36:44.568Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T00:36:44.573Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/dpro-343c0  
+ 
+[debug] [2019-01-29T00:36:45.227Z] <<< HTTP RESPONSE 200
+[warn] !  functions: package.json indicates an outdated version of firebase-functions.
+ Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+[info] 
+[info] === Deploying to 'dpro-343c0'...
+[info] 
+[info] i  deploying database, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2019-01-29T00:37:10.519Z] >>> HTTP REQUEST PUT https://dpro-343c0.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false",
+    ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false"
+  }
+}
+[debug] [2019-01-29T00:37:11.303Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database dpro-343c0 is valid
+[debug] [2019-01-29T00:37:11.310Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "firebase-admin": "^5.8.2",
+    "firebase-functions": "^0.8.1",
+    "sendgrid": "1.9.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-01-29T00:37:11.314Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/dpro-343c0?view=CONSUMER_VIEW  
+ 
+[debug] [2019-01-29T00:37:11.316Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/dpro-343c0?view=CONSUMER_VIEW  
+ 
+[debug] [2019-01-29T00:37:12.628Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-01-29T00:37:12.849Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T00:37:12.850Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/dpro-343c0  
+ 
+[debug] [2019-01-29T00:37:13.101Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T00:37:13.102Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/622288756150:getServerAppConfig  
+ 
+[debug] [2019-01-29T00:37:14.031Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T00:37:14.035Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/dpro-343c0/versions  
+
+[debug] [2019-01-29T00:37:15.944Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-01-29T00:37:15.951Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/dpro-343c0/configs  
+ 
+[debug] [2019-01-29T00:37:16.751Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (37.34 KB) for uploading
+[debug] [2019-01-29T00:37:30.703Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/dpro-343c0/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-01-29T00:37:31.656Z] <<< HTTP RESPONSE 200
+[debug] [2019-01-29T00:37:31.657Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-60658c11-4d8a-4cfe-9d1d-064026ed01bc/4862fbad-9edb-4ff2-914d-4fbd415cdeee.zip?GoogleAccessId=service-622288756150@gcf-admin-robot.iam.gserviceaccount.com&Expires=1548724047&Signature=iN9Vel38MtkwV7c9TgP0bE%2F%2FpCpu1J5e9rWXyYUxQnUgxka4vh0u%2BGxa8iRrafqXwmOF7e0ooRMiJGOl5m%2F%2Bq8VfgIpmeaC3VeCYf9B3UZYt98mlhvcpNTHewIrrZoIGU5sk5baf8Ux9yaRIsA1Fvjz8DaUvek82qu2r968vlhsvMZV7Nv66PLBwZNxfn51P9BGGiwpeUMlVu%2BQZDVt05z4fyQpnqTeni5JpU4n3HvOEvH1LtU1mwIDGBhtOpILZEDfvGrLTi15Jt6xBjTLVj1%2FIxaaLsVPc8GU1EX0d79fopBCVg7BW9KtWB2o%2BMuuBFkAnF9lWVwVDYQ7z%2FQ17bA%3D%3D  
+
+[debug] [2019-01-29T00:37:32.628Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting[dpro-343c0]: beginning deploy...
+[info] i  hosting[dpro-343c0]: found 5085 files in public
+[debug] [2019-01-29T00:37:38.451Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2019-01-29T00:37:51.338Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/dpro-343c0/versions/24fccb8d52f54202:populateFiles  
+ <request body omitted>
+[debug] [2019-01-29T00:37:55.723Z] <<< HTTP RESPONSE 200
