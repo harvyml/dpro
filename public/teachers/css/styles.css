@@ -5,6 +5,10 @@
 	padding: 0;
 }
 
+a.sidenav-trigger{
+	display: block !important;
+}
+
 body{
 	width: 100%;
 	font-family: 'Lora', serif;
@@ -42,6 +46,10 @@ header .nav li .nav-a{
 	background: #3d98d1;
 }
 
+.description{
+	position: fixed;
+	right: 0 !important;
+}
 /* container 1 */
 
 .title-maestros{
