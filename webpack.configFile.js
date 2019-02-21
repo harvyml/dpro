@@ -4,8 +4,7 @@ const ref = "./public/teachers/server/"
 module.exports = {
     mode: "production",
     entry: [
-        ref+"all.js",
-        ref+"obs.js"
+        ref+"config.js"
     ],
     module: {
         rules: [//These are the loaders
@@ -13,7 +12,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'client_bundle.js',
+        filename: 'config_bundle.js',
         path: __dirname + '/public/teachers',
         publicPath: '/public/teachers/'
     }

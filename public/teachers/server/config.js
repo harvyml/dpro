@@ -31,4 +31,4 @@ var teacherCode = ""
 
   // funciones del index
   // Login
-  const auth = firebase.auth();
+const auth = firebase.auth();

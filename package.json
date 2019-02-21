@@ -3,7 +3,7 @@
   "description": "Academic System",
   "private": true,
   "scripts": {
-    "webpack": "node_modules/.bin/webpack --config webpack.config.js"
+    "webpack": "node_modules/.bin/webpack --config webpack.config.js && webpack --config webpack.configFile.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
