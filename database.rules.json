@@ -1,6 +1,12 @@
 {
   "rules": {
-    ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'students' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false",
-    ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false"
+    "users": {
+      ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'student' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false",
+      ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false",
+      "grades": {
+        ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher'"
+      },
+      ".indexOn": ["code", "id", "email"]
+    }
   }
 }
