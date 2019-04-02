@@ -129,3 +129,30 @@ exports.gradesRef = functions.https.onRequest((request, response) => {
   })
 
 })
+
+var registrationTokens = {};
+exports.getTokens = functions.https.onRequest((req, res) => {
+  console.log("hola")
+  firebase.database().ref("la-presentacion-el-paraiso/users").orderByChild("info/token").once("value", snap => {
+    let keys = Object.keys(snap.val())
+    for(var k in snap.val()){
+      if(snap.val()[k].info.token != undefined){
+        registrationTokens[k] = `${snap.val()[k].info.token}`
+      }      
+    }
+    //let tok = (snap.val()[k]) ? snap.val()[k].info.token : ""
+    //res.send(t(registrationTokens, tok))
+    //registrationTokens = (snap.val()[k] == true) ? snap.val()[k].info.token : k
+    setTimeout(function(){
+      res.send(registerToFirebase(registrationTokens))
+    }, 2000)
+  })
+})
+
+function registerToFirebase(registrationTokens){
+  return firebase.database().ref("la-presentacion-el-paraiso/badGrades").update({
+    tokens: registrationTokens
+  })
+  .then(() => console.log(registrationTokens))
+  .catch((e) => console.log(e.message))
+}
