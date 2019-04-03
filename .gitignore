@@ -1,2 +1,6 @@
 #ignore 
 node_modules/
+package-lock.json
+functions/serviceAccountKey.json
+functions/sendgrid.env
+functions/package-lock.json

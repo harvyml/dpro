@@ -42,7 +42,7 @@ var ref = firebase.database().ref("la-presentacion-el-paraiso/")
     console.log("sending Messages to: " + emails.join())
     // using SendGrid's Node.js Library
   	// https://github.com/sendgrid/sendgrid-nodejs
-  	var sendgrid = require("sendgrid")("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");
+  	var sendgrid = require("sendgrid")(PROCESS.ENV.API_KEY);
   	var emailSendgrid = new sendgrid.Email();
   	emailSendgrid.addTo(emails);
   	emailSendgrid.setFrom("harvyestebanml@gmail.com");
@@ -155,4 +155,54 @@ function registerToFirebase(registrationTokens){
   })
   .then(() => console.log(registrationTokens))
   .catch((e) => console.log(e.message))
+}
+
+exports.sendMessages = functions.https.onRequest((req, res) => {
+  /*var tokenstosend = [
+    "eVp5TY1luNI:APA91bErRi2lArlmr4Q4PxKlrpm19KbSAf2HFmc2k-CA22YZWkJbopCAXmXCFgNasDkVUeaXStKqLi2nPG1gAc0u-NtQgoEKX-qtn3xEHdVx_fQ0B8Gs6wHwe7fiAiWChLRresko44sa"
+  ]*/
+  
+  
+  
+  var registrationTokensForMessage = []
+  firebase.database().ref("la-presentacion-el-paraiso/badGrades/tokens").once("value", s => {
+    for(var ktk in s.val()){
+      registrationTokensForMessage.push(s.val()[ktk])
+    }
+    setTimeout(function(){
+      console.log(registrationTokensForMessage)
+      sendMessageByOtherWay(registrationTokensForMessage)
+      res.write(`${registrationTokensForMessage}`)
+      res.end()
+    }, 3000)
+
+  })
+  //sendMessage("eVp5TY1luNI:APA91bErRi2lArlmr4Q4PxKlrpm19KbSAf2HFmc2k-CA22YZWkJbopCAXmXCFgNasDkVUeaXStKqLi2nPG1gAc0u-NtQgoEKX-qtn3xEHdVx_fQ0B8Gs6wHwe7fiAiWChLRresko44sa")
+})
+
+function sendMessageByOtherWay(registrationToken){
+// See the "Defining the message payload" section below for details
+// on how to define a message payload.
+var payload = {
+  notification: {
+    title: 'Sistema de Gestion Academico',
+    body: 'Tatiana Linares tuvo mal rendimiento esta semana',
+    click_action: 'www.twitter.com',
+  },
+  data: {
+    score: '850',
+    time: '2:45',
+  }
+};
+
+// Send a message to the device corresponding to the provided
+// registration token.
+firebase.messaging().sendToDevice(registrationToken, payload).then(function(response) {
+    // See the MessagingDevicesResponse reference documentation for
+    // the contents of response.
+    console.log('Successfully sent message:', response);
+  })
+  .catch(function(error) {
+    console.log('Error sending message:', error);
+  });
 }

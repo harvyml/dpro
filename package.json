@@ -3,13 +3,15 @@
   "description": "Academic System",
   "private": true,
   "scripts": {
-    "webpack": "node_modules/.bin/webpack --config webpack.config.js && webpack --config webpack.configFile.js"
+    "webpack": "node_modules/.bin/webpack --config webpack.config.js && webpack --config webpack.configFile.js",
+    "firebase:all": "cross-env API_KEY=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 && firebase serve"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.0",
     "babel-polyfill": "^6.26.0",
+    "cross-env": "^5.2.0",
     "glob": "^7.1.3",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2"

@@ -6,32 +6,10 @@
           ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false"
         },
         "users":{
-          ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'student' ? true : false",
-            "grades":{
-          		".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false",
-            },
-            "$uid":{
-              "info":{
-                ".write": "$uid == auth.uid"
-              }
-            }
-        }
-      }
-  }
-}
-
-{
-  "rules": {
-      "la-presentacion-el-paraiso":{
-        "config":{
-          ".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false",
-          ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false"
-        },
-        "users":{
           ".indexOn": ["info/token", "info/email"],
           ".read": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' ? true : false || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'student' ? true : false",
             "grades":{
-          		".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false",
+          		".write": "root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'teacher' || root.child('la-presentacion-el-paraiso').child('users').child(auth.uid).child('info').child('rol').val() == 'admin' ? true : false"
             },
             "$uid":{
               "info":{

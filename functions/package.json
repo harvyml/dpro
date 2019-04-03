@@ -7,5 +7,8 @@
     "firebase-functions": "^0.8.1",
     "sendgrid": "1.9.2"
   },
+  "scripts":{
+    "firebase:all": "cross-env API_KEY=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 && firebase serve"
+  },
   "private": true
 }
