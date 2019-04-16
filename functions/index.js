@@ -158,12 +158,6 @@ function registerToFirebase(registrationTokens){
 }
 
 exports.sendMessages = functions.https.onRequest((req, res) => {
-  /*var tokenstosend = [
-    "eVp5TY1luNI:APA91bErRi2lArlmr4Q4PxKlrpm19KbSAf2HFmc2k-CA22YZWkJbopCAXmXCFgNasDkVUeaXStKqLi2nPG1gAc0u-NtQgoEKX-qtn3xEHdVx_fQ0B8Gs6wHwe7fiAiWChLRresko44sa"
-  ]*/
-  
-  
-  
   var registrationTokensForMessage = []
   firebase.database().ref("la-presentacion-el-paraiso/badGrades/tokens").once("value", s => {
     for(var ktk in s.val()){
@@ -184,16 +178,13 @@ function sendMessageByOtherWay(registrationToken){
 // See the "Defining the message payload" section below for details
 // on how to define a message payload.
 var payload = {
-  notification: {
-    title: 'Sistema de Gestion Academico',
-    body: 'Tatiana Linares tuvo mal rendimiento esta semana',
-    click_action: 'www.twitter.com',
-  },
-  data: {
-    score: '850',
-    time: '2:45',
+  "notification": {
+    "title": "Sistema de Gestión Academica",
+    "body": "Su hijo está teniendo mal rendimiento",
+    "click_action": "https://dpro-343c0.firebaseapp.com/",
+    "icon": "https://lh3.googleusercontent.com/EuYvrP99jJzoK62M7iQ4s6z9cjhscqtGlXzUCoreQ4qwynrNwG73xk9OoLSeUiKdv_DFYjk=s85"
   }
-};
+}
 
 // Send a message to the device corresponding to the provided
 // registration token.
@@ -205,4 +196,50 @@ firebase.messaging().sendToDevice(registrationToken, payload).then(function(resp
   .catch(function(error) {
     console.log('Error sending message:', error);
   });
+}
+
+exports.determineGrades = functions.https.onRequest((req, res) => {
+  determineBadGrades(req, res)
+  //res.send("hola")
+})
+
+function determineBadGrades(req, res){
+  ref.child("users/").on("child_added", snap => {
+    let k = snap.key
+    let keys = snap.val().grades ? Object.keys(snap.val().grades) : ""
+    if(keys != ""){
+      keys.forEach(snapchild => {
+        let ks = snap.val().grades[snapchild] ? Object.keys(snap.val().grades[snapchild]) : ""
+        ks.forEach(kt => {
+          let mark = parseFloat(snap.val().grades[snapchild][kt]).toFixed(2) <= 3.4 ? parseFloat(snap.val().grades[snapchild][kt]) : ""
+            
+            /*
+            console.log(total)
+            let all = {
+              [k]:{
+                [kt]: snap.val().grades[snapchild][kt]
+              }
+            }
+            ref.child("badGrades/info/").push(all)
+            .then(() => console.log("Completed"))
+            .catch(e => console.log(e.message + "Error"))
+            */
+           let data = {
+             [k]: {
+               [snapchild] : {
+                 [kt] : mark
+               }
+             }
+            }
+           ref.child("badGrades/info/").update(data)
+           .then(() => {
+            res.write(`${JSON.stringify(data)}\n`)
+           })
+           .catch((e) => console.log(e.message))
+           
+          
+        })
+      })
+    }
+  })
 }
