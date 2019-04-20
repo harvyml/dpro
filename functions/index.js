@@ -133,19 +133,21 @@ exports.gradesRef = functions.https.onRequest((request, response) => {
 var registrationTokens = {};
 exports.getTokens = functions.https.onRequest((req, res) => {
   console.log("hola")
-  firebase.database().ref("la-presentacion-el-paraiso/users").orderByChild("info/token").once("value", snap => {
-    let keys = Object.keys(snap.val())
-    for(var k in snap.val()){
-      if(snap.val()[k].info.token != undefined){
-        registrationTokens[k] = `${snap.val()[k].info.token}`
-      }      
-    }
+  firebase.database().ref("la-presentacion-el-paraiso/users").orderByChild("info/token").on("child_added", snap => {
+    let keys = snap.key
+    let infoRef = firebase.database().ref("la-presentacion-el-paraiso/badGrades/info")
+    infoRef.on("child_added", infoSnap => {
+      //console.log(keys, infoSnap.key)
+      if(infoSnap.key == snap.key){
+        let toRegister =  `${snap.val().info.token}`
+        registrationTokens[infoSnap.key] = toRegister
+        console.log(registrationTokens)
+        registerToFirebase(registrationTokens)      
+      }
+    })
     //let tok = (snap.val()[k]) ? snap.val()[k].info.token : ""
     //res.send(t(registrationTokens, tok))
     //registrationTokens = (snap.val()[k] == true) ? snap.val()[k].info.token : k
-    setTimeout(function(){
-      res.send(registerToFirebase(registrationTokens))
-    }, 2000)
   })
 })
 
@@ -206,12 +208,13 @@ exports.determineGrades = functions.https.onRequest((req, res) => {
 function determineBadGrades(req, res){
   ref.child("users/").on("child_added", snap => {
     let k = snap.key
+    var mark = 0
     let keys = snap.val().grades ? Object.keys(snap.val().grades) : ""
     if(keys != ""){
       keys.forEach(snapchild => {
         let ks = snap.val().grades[snapchild] ? Object.keys(snap.val().grades[snapchild]) : ""
         ks.forEach(kt => {
-          let mark = parseFloat(snap.val().grades[snapchild][kt]).toFixed(2) <= 3.4 ? parseFloat(snap.val().grades[snapchild][kt]) : ""
+          mark = (parseFloat(snap.val().grades[snapchild][kt]).toFixed(2) <= 3.4 && parseFloat(snap.val().grades[snapchild][kt]).toFixed(2) != "" && parseFloat(snap.val().grades[snapchild][kt]).toFixed(2) != 0 && snap.val().info.rol == "student") ? parseFloat(snap.val().grades[snapchild][kt]) : ""
             
             /*
             console.log(total)
@@ -224,16 +227,10 @@ function determineBadGrades(req, res){
             .then(() => console.log("Completed"))
             .catch(e => console.log(e.message + "Error"))
             */
-           let data = {
-             [k]: {
-               [snapchild] : {
-                 [kt] : mark
-               }
-             }
-            }
-           ref.child("badGrades/info/").update(data)
+           let data = { [snapchild+"-"+kt] : mark}
+           ref.child(`badGrades/info/${k}`).update(data)
            .then(() => {
-            res.write(`${JSON.stringify(data)}\n`)
+            console.log(`${JSON.stringify(data)}\n`)
            })
            .catch((e) => console.log(e.message))
            
@@ -243,3 +240,5 @@ function determineBadGrades(req, res){
     }
   })
 }
+
+
